@@ -19,13 +19,17 @@ class NewItemViewController: UIViewController {
         super.viewDidLoad()
         
         // Set UITextViews border to look like a UITextField
-        self.itemNotesTextView.layer.borderWidth = 1
-        self.itemNotesTextView.layer.borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.1).cgColor
-        self.itemNotesTextView.layer.cornerRadius = 8;
+        itemNotesTextView.layer.borderWidth = 0.5
+        itemNotesTextView.layer.borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.1).cgColor
+        itemNotesTextView.layer.cornerRadius = 8
     }
     
     @IBAction func createTapped(_ sender: Any) {
-        
+        // TODO - Implement createNewItem
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     /*

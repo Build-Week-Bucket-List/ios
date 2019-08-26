@@ -99,8 +99,8 @@
 		37D059B1231437FB000434A8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0ED3BAAD231460A600D67370 /* BucketListViewController.swift */,
+				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0ED3BAB02314821400D67370 /* NewItemViewController.swift */,
 			);
 			path = "View Controllers";
