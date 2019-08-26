@@ -84,7 +84,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Item" id="0Ma-bR-NCo"/>
+                    <navigationItem key="navigationItem" title="Add New Item" id="0Ma-bR-NCo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Nuz-dw-RqB">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Wjc-KB-oRJ" id="fGx-hP-6fL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="itemDescriptionTextField" destination="9oX-aA-pM7" id="Rps-XR-TOg"/>
                         <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="0dI-cC-5uw"/>
@@ -114,22 +120,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-tr-bBR">
-                                                    <rect key="frame" x="20" y="13" width="40" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="L4Y-Ig-DMz">
+                                                    <rect key="frame" x="20" y="3.5" width="75" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-tr-bBR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBp-dc-I8c">
+                                                            <rect key="frame" x="0.0" y="27" width="75" height="16"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="m9e-tr-bBR" firstAttribute="centerY" secondItem="U3K-Al-wzk" secondAttribute="centerY" id="4p6-Gf-DZR"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="m9e-tr-bBR" secondAttribute="trailing" constant="8" id="BOf-85-99J"/>
-                                                <constraint firstItem="m9e-tr-bBR" firstAttribute="leading" secondItem="U3K-Al-wzk" secondAttribute="leadingMargin" id="bqT-M0-cur"/>
+                                                <constraint firstItem="L4Y-Ig-DMz" firstAttribute="leading" secondItem="U3K-Al-wzk" secondAttribute="leadingMargin" id="7Q9-Im-RE4"/>
+                                                <constraint firstItem="L4Y-Ig-DMz" firstAttribute="centerY" secondItem="U3K-Al-wzk" secondAttribute="centerY" id="NQp-eb-dHS"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="L4Y-Ig-DMz" secondAttribute="trailing" id="bsC-uk-vnd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bucketListItemDescription" destination="kBp-dc-I8c" id="5FK-iI-alN"/>
                                             <outlet property="bucketListItemName" destination="m9e-tr-bBR" id="rM7-QT-Qcy"/>
-                                            <segue destination="ISX-BX-2tI" kind="show" id="7nv-Gz-Acu"/>
+                                            <segue destination="ISX-BX-2tI" kind="show" identifier="BLDetailViewShowSegue" id="7nv-Gz-Acu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -162,14 +180,43 @@
         <!--Bucket List Item-->
         <scene sceneID="jBU-aW-wlj">
             <objects>
-                <viewController id="ISX-BX-2tI" customClass="BLDetailViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ISX-BX-2tI" customClass="BucketListDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r2F-NL-vBm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="o8t-Ce-nnR">
+                                <rect key="frame" x="20" y="176" width="374" height="601"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VE0-OE-Uqr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Item notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-xb-gKD">
+                                        <rect key="frame" x="0.0" y="63.5" width="374" height="537.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o8t-Ce-nnR" firstAttribute="leading" secondItem="ZV5-nh-K2H" secondAttribute="leading" constant="20" id="47Y-ld-k4E"/>
+                            <constraint firstItem="ZV5-nh-K2H" firstAttribute="bottom" secondItem="o8t-Ce-nnR" secondAttribute="bottom" constant="36" id="eir-LP-1an"/>
+                            <constraint firstItem="o8t-Ce-nnR" firstAttribute="top" secondItem="ZV5-nh-K2H" secondAttribute="top" constant="36" id="ls5-a8-c6c"/>
+                            <constraint firstItem="ZV5-nh-K2H" firstAttribute="trailing" secondItem="o8t-Ce-nnR" secondAttribute="trailing" constant="20" id="tOA-wa-cp5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZV5-nh-K2H"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bucket List Item" id="fcN-JK-hK0"/>
+                    <connections>
+                        <outlet property="itemDescriptionLabel" destination="VE0-OE-Uqr" id="fU6-R0-hv7"/>
+                        <outlet property="itemNotesTextView" destination="nYr-xb-gKD" id="Osb-q8-sB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Su-m5-m8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
