@@ -59,7 +59,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU"/>
+                    <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="OpL-Zl-5Xq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bucketListTableView" destination="zOj-aw-26U" id="gK6-Mb-GBg"/>
                     </connections>

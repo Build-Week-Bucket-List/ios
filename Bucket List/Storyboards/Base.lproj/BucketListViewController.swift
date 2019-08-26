@@ -22,13 +22,13 @@ class BucketListViewController: UIViewController, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BucketListCell", for: indexPath) as? BucketListTableViewCell else { return UITableViewCell() }
         
-        cell.bucketListItemName.text = "Name"
+        cell.bucketListItemName.text = "Cell \(indexPath.row + 1)"
         
         return cell
     }
