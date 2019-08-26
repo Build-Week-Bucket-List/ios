@@ -23,5 +23,7 @@ enum LoginType: String {
 }
 
 class UserController {
+	let baseURL = URL(string: "hypedupharris-bucketlist.herokuapp.com/signup")
+
 	
 }
