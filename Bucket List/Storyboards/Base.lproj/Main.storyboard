@@ -10,6 +10,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add New Item-->
+        <scene sceneID="O0p-v7-8QS">
+            <objects>
+                <viewController id="Wjc-KB-oRJ" customClass="NewItemViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qcp-RN-Ejx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-Ur-154">
+                                <rect key="frame" x="167" y="512" width="80" height="30"/>
+                                <state key="normal" title="Create Item"/>
+                                <connections>
+                                    <action selector="createTapped:" destination="Wjc-KB-oRJ" eventType="touchUpInside" id="865-Or-tzj"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="u0T-VC-dq0">
+                                <rect key="frame" x="20" y="172" width="374" height="290"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-AU-arO">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name &amp; Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PK-VA-Cat">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bucket List Item Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gvq-bq-r27">
+                                                <rect key="frame" x="0.0" y="31" width="374" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bucket List Item Description:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-aA-pM7">
+                                        <rect key="frame" x="0.0" y="81" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k8R-QX-f70">
+                                        <rect key="frame" x="0.0" y="131" width="374" height="159"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-W2-t2q">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m0z-9K-7IM">
+                                                <rect key="frame" x="0.0" y="31" width="374" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="jxF-Xo-p0f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
+                            <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
+                            <constraint firstItem="eqt-Ur-154" firstAttribute="top" secondItem="u0T-VC-dq0" secondAttribute="bottom" constant="50" id="aaA-5t-s2g"/>
+                            <constraint firstItem="eqt-Ur-154" firstAttribute="centerX" secondItem="u0T-VC-dq0" secondAttribute="centerX" id="eDQ-di-CvY"/>
+                            <constraint firstItem="u0T-VC-dq0" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="qRH-89-fuF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Item" id="0Ma-bR-NCo"/>
+                    <connections>
+                        <outlet property="itemDescriptionTextField" destination="9oX-aA-pM7" id="Rps-XR-TOg"/>
+                        <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="0dI-cC-5uw"/>
+                        <outlet property="itemNotesTextView" destination="m0z-9K-7IM" id="WvB-kd-xYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljM-tS-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="-512"/>
+        </scene>
         <!--Bucket List-->
         <scene sceneID="eW0-4L-iQb">
             <objects>
@@ -60,7 +145,11 @@
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="OpL-Zl-5Xq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OpL-Zl-5Xq">
+                            <connections>
+                                <segue destination="Jvc-Z8-gBt" kind="presentation" id="Gka-zm-zsU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bucketListTableView" destination="zOj-aw-26U" id="gK6-Mb-GBg"/>
@@ -122,6 +211,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blc-AL-PVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328" y="225"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4a1-DP-ZMS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jvc-Z8-gBt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F89-bR-1dJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wjc-KB-oRJ" kind="relationship" relationship="rootViewController" id="acl-zR-Obu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeB-f6-jZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2886.9565217391305" y="-511.60714285714283"/>
         </scene>
     </scenes>
 </document>
