@@ -13,7 +13,7 @@
         <!--Bucket List-->
         <scene sceneID="eW0-4L-iQb">
             <objects>
-                <viewController title="Bucket List" id="rVx-Ru-FAd" sceneMemberID="viewController">
+                <viewController title="Bucket List" id="rVx-Ru-FAd" customClass="BucketListViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aub-2p-FXE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,6 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU"/>
+                    <connections>
+                        <outlet property="bucketListTableView" destination="zOj-aw-26U" id="gK6-Mb-GBg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilC-eq-Qsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
