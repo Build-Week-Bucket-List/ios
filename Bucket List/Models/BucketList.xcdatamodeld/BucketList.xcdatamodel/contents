@@ -15,6 +15,7 @@
         <relationship name="bucketList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BucketList" inverseName="items" inverseEntity="BucketList" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,8 +23,8 @@
         <relationship name="friendsList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="friendsList" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="133.3046875" positionY="269.9921875" width="128" height="148"/>
-        <element name="User" positionX="-262.50390625" positionY="153.40625" width="128" height="118"/>
         <element name="BucketList" positionX="-74.47265625" positionY="248.3984375" width="128" height="88"/>
+        <element name="Item" positionX="115.97265625" positionY="240.97265625" width="128" height="148"/>
+        <element name="User" positionX="-262.50390625" positionY="153.40625" width="128" height="135"/>
     </elements>
 </model>
