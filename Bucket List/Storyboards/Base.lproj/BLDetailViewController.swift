@@ -8,12 +8,33 @@
 
 import UIKit
 
-class BLDetailViewController: UIViewController {
-
+class BucketListDetailViewController: UIViewController {
+    
+    @IBOutlet weak var itemDescriptionLabel: UILabel!
+    @IBOutlet weak var itemNotesTextView: UITextView!
+    
+    // /* Uncomment when implemented - TODO
+     var userData: userData? {
+        didSet {
+            updateViews
+        }
+     }
+    // */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func updateViews() {
+        // Uncomment when implemented - TODO
+//        guard let userData = userData else { return }
+//        itemDescriptionLabel.text = userData.itemDescription
+//        itemNotesTextView.text = userData.itemNotes
+        
     }
     
 

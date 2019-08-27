@@ -11,7 +11,7 @@ import UIKit
 class BucketListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bucketListItemName: UILabel!
-    
+    @IBOutlet weak var bucketListItemDescription: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
