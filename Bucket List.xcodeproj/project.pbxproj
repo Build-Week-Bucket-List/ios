@@ -25,6 +25,7 @@
 		37D059C223145FBB000434A8 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C123145FBB000434A8 /* ItemController.swift */; };
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
 		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
+		E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		37D059C123145FBB000434A8 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
 		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
+		E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Bucket List/Storyboards/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				0ED3BAAD231460A600D67370 /* BucketListViewController.swift */,
 				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0ED3BAB02314821400D67370 /* NewItemViewController.swift */,
+				E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				0ED3BAA923145F7400D67370 /* BucketListTableViewCell.swift in Sources */,
 				37D059C023145C5E000434A8 /* UserController.swift in Sources */,
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
+				E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
 				37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */,
