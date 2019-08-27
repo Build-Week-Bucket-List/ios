@@ -28,6 +28,9 @@
 		37D059C223145FBB000434A8 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C123145FBB000434A8 /* ItemController.swift */; };
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
 		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
+		E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */; };
+		E5E9B8A52315CF800020FBD1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */; };
+		E5E9B8A82315E4680020FBD1 /* FriendsListTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		37D059C123145FBB000434A8 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
 		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
+		E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Bucket List/Storyboards/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "Bucket List/Storyboards/SignUpViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsListTab.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 				37D059A2231437D5000434A8 /* Main.storyboard */,
 				37D059A7231437D6000434A8 /* LaunchScreen.storyboard */,
 				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
+				E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */,
 				0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */,
 			);
 			path = Storyboards;
@@ -124,6 +131,8 @@
 				0ED3BAAD231460A600D67370 /* BucketListViewController.swift */,
 				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0E95DE8C2315B952006C58BA /* SelectDateViewController.swift */,
+				E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */,
+				E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E9B8A82315E4680020FBD1 /* FriendsListTab.storyboard in Resources */,
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
 				0E95DE902315C437006C58BA /* CompletedBucketList.storyboard in Resources */,
@@ -252,6 +262,7 @@
 				0ED3BAA923145F7400D67370 /* BucketListTableViewCell.swift in Sources */,
 				37D059C023145C5E000434A8 /* UserController.swift in Sources */,
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
+				E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
 				37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */,
@@ -259,6 +270,7 @@
 				37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */,
 				37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */,
 				0E95DE8E2315B952006C58BA /* SelectDateViewController.swift in Sources */,
+				E5E9B8A52315CF800020FBD1 /* SignUpViewController.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
