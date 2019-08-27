@@ -43,10 +43,21 @@ class BucketListViewController: UIViewController, UITableViewDataSource {
         if segue.identifier == "BLDetailViewShowSegue" {
             if let bucketListDetailVC = segue.destination as? BucketListDetailViewController,
                 let indexPath = bucketListTableView.indexPathForSelectedRow {
+                bucketListDetailVC.title = "Edit Item" // TODO - Replace "Item" with \()
+                bucketListDetailVC.item = itemController // TODO - Change to single item rather than itemController
                 /*
                  bucketListDetailVC.userData = TODO
                  */
-                
+            }
+        }
+        if segue.identifier == "AddNewItemShowSegue" {
+            if let bucketListDetailVC = segue.destination as? BucketListDetailViewController,
+                let indexPath = bucketListTableView.indexPathForSelectedRow {
+                bucketListDetailVC.title = "Add New Item"
+                bucketListDetailVC.item = itemController // TODO - Change to single item rather than itemController
+                /*
+                 bucketListDetailVC.itemData = TODO
+                 */
             }
         }
     }

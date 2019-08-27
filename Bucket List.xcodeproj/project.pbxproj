@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E95DE8E2315B952006C58BA /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E95DE8C2315B952006C58BA /* SelectDateViewController.swift */; };
+		0E95DE902315C437006C58BA /* CompletedBucketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */; };
 		0ED3BAA923145F7400D67370 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3BAA723145F7400D67370 /* BucketListTableViewCell.swift */; };
 		0ED3BAAC2314605200D67370 /* BucketListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */; };
 		0ED3BAAF231460A600D67370 /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3BAAD231460A600D67370 /* BucketListViewController.swift */; };
-		0ED3BAB22314821400D67370 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3BAB02314821400D67370 /* NewItemViewController.swift */; };
 		37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA8F231496C200B8D611 /* UserRepresentation.swift */; };
 		37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */; };
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
@@ -30,10 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E95DE8D2315B952006C58BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Bucket List/Storyboards/Base.lproj/SelectDateViewController.swift"; sourceTree = SOURCE_ROOT; };
+		0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompletedBucketList.storyboard; sourceTree = "<group>"; };
 		0ED3BAA823145F7400D67370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Bucket List/Storyboards/Base.lproj/BucketListTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		0ED3BAAB2314605200D67370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Bucket List/Storyboards/Base.lproj/BLDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0ED3BAAE231460A600D67370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Bucket List/Storyboards/Base.lproj/BucketListViewController.swift"; sourceTree = SOURCE_ROOT; };
-		0ED3BAB12314821400D67370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Bucket List/Storyboards/Base.lproj/NewItemViewController.swift"; sourceTree = SOURCE_ROOT; };
 		37ABDA8F231496C200B8D611 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				37D059A2231437D5000434A8 /* Main.storyboard */,
 				37D059A7231437D6000434A8 /* LaunchScreen.storyboard */,
 				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
+				0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -120,7 +123,7 @@
 			children = (
 				0ED3BAAD231460A600D67370 /* BucketListViewController.swift */,
 				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
-				0ED3BAB02314821400D67370 /* NewItemViewController.swift */,
+				0E95DE8C2315B952006C58BA /* SelectDateViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
+				0E95DE902315C437006C58BA /* CompletedBucketList.storyboard in Resources */,
 				E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */,
 				37D059A4231437D5000434A8 /* Main.storyboard in Resources */,
 			);
@@ -251,10 +255,10 @@
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
 				37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */,
-				0ED3BAB22314821400D67370 /* NewItemViewController.swift in Sources */,
 				37D059BC2314557E000434A8 /* CoreDataStack.swift in Sources */,
 				37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */,
 				37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */,
+				0E95DE8E2315B952006C58BA /* SelectDateViewController.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
@@ -267,6 +271,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0E95DE8C2315B952006C58BA /* SelectDateViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E95DE8D2315B952006C58BA /* Base */,
+			);
+			name = SelectDateViewController.swift;
+			sourceTree = "<group>";
+		};
 		0ED3BAA723145F7400D67370 /* BucketListTableViewCell.swift */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,14 +301,6 @@
 				0ED3BAAE231460A600D67370 /* Base */,
 			);
 			name = BucketListViewController.swift;
-			sourceTree = "<group>";
-		};
-		0ED3BAB02314821400D67370 /* NewItemViewController.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0ED3BAB12314821400D67370 /* Base */,
-			);
-			name = NewItemViewController.swift;
 			sourceTree = "<group>";
 		};
 		37D059A2231437D5000434A8 /* Main.storyboard */ = {
