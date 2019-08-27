@@ -18,14 +18,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var login = false
+    
     @IBOutlet weak var signupButton: UIButton!
     
-    func setTitle(_ title: String?, for state: UIControl.State){
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signupButton.layer.cornerRadius = signupButton.frame.height / 2
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
@@ -43,8 +42,6 @@ class LoginViewController: UIViewController {
     }
     
     }
-  
-
         // Do any additional setup after loading the view.
     
     
