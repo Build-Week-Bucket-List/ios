@@ -15,6 +15,7 @@
 		37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */; };
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
 		37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA952314970000B8D611 /* Item+Convenience.swift */; };
+		37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA972314ED8E00B8D611 /* Bearer.swift */; };
 		37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D0599E231437D5000434A8 /* AppDelegate.swift */; };
 		37D059A4231437D5000434A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D059A2231437D5000434A8 /* Main.storyboard */; };
 		37D059A6231437D6000434A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D059A5231437D6000434A8 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		37D059C223145FBB000434A8 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C123145FBB000434A8 /* ItemController.swift */; };
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
 		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
-		E525A28A231491DE00D0CBAE /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A289231491DE00D0CBAE /* TabBarController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +36,7 @@
 		37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		37ABDA952314970000B8D611 /* Item+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Convenience.swift"; sourceTree = "<group>"; };
+		37ABDA972314ED8E00B8D611 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		37D0599B231437D5000434A8 /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D0599E231437D5000434A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D059A3231437D5000434A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,11 +44,10 @@
 		37D059A8231437D6000434A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37D059AA231437D6000434A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D059BB2314557E000434A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
-		E525A289231491DE00D0CBAE /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		37D059BF23145C5E000434A8 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		37D059C123145FBB000434A8 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
+		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 				37D059A2231437D5000434A8 /* Main.storyboard */,
 				37D059A7231437D6000434A8 /* LaunchScreen.storyboard */,
 				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
-				E525A289231491DE00D0CBAE /* TabBarController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -155,6 +154,7 @@
 			children = (
 				37D059BF23145C5E000434A8 /* UserController.swift */,
 				37D059C123145FBB000434A8 /* ItemController.swift */,
+				37ABDA972314ED8E00B8D611 /* Bearer.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -219,7 +219,6 @@
 			files = (
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
-				E525A28A231491DE00D0CBAE /* TabBarController.storyboard in Resources */,
 				E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */,
 				37D059A4231437D5000434A8 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +241,7 @@
 				37D059BC2314557E000434A8 /* CoreDataStack.swift in Sources */,
 				37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
+				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
 				0ED3BAAF231460A600D67370 /* BucketListViewController.swift in Sources */,
 				0ED3BAAC2314605200D67370 /* BucketListDetailViewController.swift in Sources */,

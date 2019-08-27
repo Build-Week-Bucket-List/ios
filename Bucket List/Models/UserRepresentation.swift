@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct UserResult: Codable {
+	var user: UserRepresentation
+	var token: String
+}
 
 struct UserRepresentation: Codable {
 	let name: String?
