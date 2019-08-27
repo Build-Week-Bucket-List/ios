@@ -137,27 +137,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-FV-gE1">
-                                <rect key="frame" x="0.0" y="119" width="414" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="588624695.00217497">
-                                    <!--2019-08-27 18:51:35 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-vh-Pfx">
-                                <rect key="frame" x="179.5" y="385" width="55" height="30"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <action selector="confirmTapped:" destination="Hqt-1P-Rd4" eventType="touchUpInside" id="7WD-Ns-DdE"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="qah-ER-jAr">
+                                <rect key="frame" x="0.0" y="94" width="414" height="382"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-Ae-pOx">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-FV-gE1">
+                                        <rect key="frame" x="0.0" y="86" width="414" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="588624695.00217497">
+                                            <!--2019-08-27 18:51:35 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-vh-Pfx">
+                                        <rect key="frame" x="0.0" y="352" width="414" height="30"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="confirmTapped:" destination="Hqt-1P-Rd4" eventType="touchUpInside" id="7WD-Ns-DdE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ziJ-FV-gE1" firstAttribute="top" secondItem="x0k-W2-RMM" secondAttribute="top" constant="75" id="F37-yl-M6W"/>
-                            <constraint firstItem="96U-vh-Pfx" firstAttribute="top" secondItem="ziJ-FV-gE1" secondAttribute="bottom" constant="50" id="Msd-zB-sJS"/>
-                            <constraint firstItem="ziJ-FV-gE1" firstAttribute="leading" secondItem="x0k-W2-RMM" secondAttribute="leading" id="gIT-cP-09j"/>
-                            <constraint firstItem="ziJ-FV-gE1" firstAttribute="trailing" secondItem="x0k-W2-RMM" secondAttribute="trailing" id="jlf-oJ-T9p"/>
-                            <constraint firstItem="96U-vh-Pfx" firstAttribute="centerX" secondItem="ziJ-FV-gE1" secondAttribute="centerX" id="p9T-kN-WHU"/>
+                            <constraint firstItem="qah-ER-jAr" firstAttribute="leading" secondItem="Eww-gh-x2s" secondAttribute="leading" id="JC5-8S-fv1"/>
+                            <constraint firstItem="x0k-W2-RMM" firstAttribute="trailing" secondItem="qah-ER-jAr" secondAttribute="trailing" id="rEA-wB-5Tl"/>
+                            <constraint firstItem="qah-ER-jAr" firstAttribute="top" secondItem="x0k-W2-RMM" secondAttribute="top" constant="50" id="sMi-H1-YD5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x0k-W2-RMM"/>
                     </view>
@@ -272,11 +281,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
+                        <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="t4y-N7-VGc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560.86956521739137" y="225"/>
+            <point key="canvasLocation" x="14" y="225"/>
+        </scene>
+        <!--CompletedBucketList-->
+        <scene sceneID="gpv-FO-hCM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CompletedBucketList" id="4NI-b9-1QR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="HE9-Xa-TaD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="94"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">
