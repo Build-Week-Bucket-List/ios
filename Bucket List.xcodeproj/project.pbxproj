@@ -23,6 +23,8 @@
 		37D059C023145C5E000434A8 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059BF23145C5E000434A8 /* UserController.swift */; };
 		37D059C223145FBB000434A8 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C123145FBB000434A8 /* ItemController.swift */; };
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
+		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
+		E525A28A231491DE00D0CBAE /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A289231491DE00D0CBAE /* TabBarController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		37D059A8231437D6000434A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37D059AA231437D6000434A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D059BB2314557E000434A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
+		E525A289231491DE00D0CBAE /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		37D059BF23145C5E000434A8 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		37D059C123145FBB000434A8 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 			children = (
 				37D059A2231437D5000434A8 /* Main.storyboard */,
 				37D059A7231437D6000434A8 /* LaunchScreen.storyboard */,
+				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
+				E525A289231491DE00D0CBAE /* TabBarController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 			files = (
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
+				E525A28A231491DE00D0CBAE /* TabBarController.storyboard in Resources */,
+				E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */,
 				37D059A4231437D5000434A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
