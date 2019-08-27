@@ -9,6 +9,8 @@
 import UIKit
 
 class BucketListDetailViewController: UIViewController {
+
+	
     
     @IBOutlet weak var itemDescriptionLabel: UILabel!
     @IBOutlet weak var itemNotesTextView: UITextView!
@@ -36,6 +38,12 @@ class BucketListDetailViewController: UIViewController {
 //        itemNotesTextView.text = userData.itemNotes
         
     }
+
+	var dateFormatter: DateFormatter = {
+		let formatter = DateFormatter()
+		formatter.dateStyle = .medium
+		return formatter
+	}()
     
 
     /*
