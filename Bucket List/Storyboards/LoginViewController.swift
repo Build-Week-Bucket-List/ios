@@ -9,12 +9,44 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet var signupView: UIView!
+    
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    
+    @IBOutlet weak var segControl: UISegmentedControl!
+    
+    var login = false
+    @IBOutlet weak var signupButton: UIButton!
+    
+    func setTitle(_ title: String?, for state: UIControl.State){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+    }
+   
+    @IBAction func segControlAction(_ sender: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            signupButton.setTitle("Sign Up", for: .normal)
+        case 1:
+            signupButton.setTitle("Login", for: .normal)
+        default:
+            break
+        }
+    }
+    
+    }
+  
 
         // Do any additional setup after loading the view.
-    }
+    
     
 
     /*
@@ -27,4 +59,3 @@ class LoginViewController: UIViewController {
     }
     */
 
-}
