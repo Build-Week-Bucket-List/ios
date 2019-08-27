@@ -24,6 +24,7 @@
 		37D059C023145C5E000434A8 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059BF23145C5E000434A8 /* UserController.swift */; };
 		37D059C223145FBB000434A8 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C123145FBB000434A8 /* ItemController.swift */; };
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
+		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		37D059BF23145C5E000434A8 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		37D059C123145FBB000434A8 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
+		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				37D059A2231437D5000434A8 /* Main.storyboard */,
 				37D059A7231437D6000434A8 /* LaunchScreen.storyboard */,
+				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
+				E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */,
 				37D059A4231437D5000434A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
