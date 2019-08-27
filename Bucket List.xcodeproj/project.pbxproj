@@ -17,6 +17,8 @@
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
 		37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA952314970000B8D611 /* Item+Convenience.swift */; };
 		37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA972314ED8E00B8D611 /* Bearer.swift */; };
+		37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCA8A82315D3C100867A5D /* KeychainWrapper.swift */; };
+		37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCA8AA2315D49600867A5D /* KeychainItemAccessibility.swift */; };
 		37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D0599E231437D5000434A8 /* AppDelegate.swift */; };
 		37D059A4231437D5000434A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D059A2231437D5000434A8 /* Main.storyboard */; };
 		37D059A6231437D6000434A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D059A5231437D6000434A8 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		37ABDA952314970000B8D611 /* Item+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Convenience.swift"; sourceTree = "<group>"; };
 		37ABDA972314ED8E00B8D611 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		37CCA8A82315D3C100867A5D /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		37CCA8AA2315D49600867A5D /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		37D0599B231437D5000434A8 /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D0599E231437D5000434A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D059A3231437D5000434A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37CCA8A32315D2B800867A5D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				37CCA8A82315D3C100867A5D /* KeychainWrapper.swift */,
+				37CCA8AA2315D49600867A5D /* KeychainItemAccessibility.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		37D05992231437D5000434A8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 				37D059B423143853000434A8 /* Helpers */,
 				37D059B323143848000434A8 /* Views */,
 				37D059B1231437FB000434A8 /* View Controllers */,
+				37CCA8A32315D2B800867A5D /* Libraries */,
 				37D059B0231437E6000434A8 /* Storyboards */,
 				37D059B223143818000434A8 /* Resources */,
 			);
@@ -243,10 +257,12 @@
 				37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */,
 				37D059BC2314557E000434A8 /* CoreDataStack.swift in Sources */,
 				37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */,
+				37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */,
 				0E95DE8E2315B952006C58BA /* SelectDateViewController.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
+				37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */,
 				0ED3BAAF231460A600D67370 /* BucketListViewController.swift in Sources */,
 				0ED3BAAC2314605200D67370 /* BucketListDetailViewController.swift in Sources */,
 			);
