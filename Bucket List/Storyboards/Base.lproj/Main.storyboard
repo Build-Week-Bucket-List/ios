@@ -162,12 +162,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="eXC-xc-x6Y"/>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OpL-Zl-5Xq">
-                            <connections>
-                                <segue destination="Jvc-Z8-gBt" kind="presentation" id="Gka-zm-zsU"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="OpL-Zl-5Xq">
+                                <connections>
+                                    <segue destination="Jvc-Z8-gBt" kind="presentation" id="Gka-zm-zsU"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Modal" id="FdB-ek-xTB">
+                                <connections>
+                                    <segue destination="UFB-oY-Qyq" kind="presentation" id="sny-BI-b1g"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="bucketListTableView" destination="zOj-aw-26U" id="gK6-Mb-GBg"/>
@@ -233,7 +241,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="8hx-9G-g6f"/>
+                        <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,12 +260,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rVx-Ru-FAd" kind="relationship" relationship="rootViewController" id="64n-9I-30S"/>
+                        <segue destination="rVx-Ru-FAd" kind="relationship" relationship="rootViewController" id="3xT-Ke-OZo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blc-AL-PVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328" y="225"/>
+        </scene>
+        <!--LogInScreen-->
+        <scene sceneID="87R-Sn-pni">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LogInScreen" id="UFB-oY-Qyq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fAh-qh-QKd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FE-rA-8PQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4a1-DP-ZMS">
