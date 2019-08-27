@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-Ls-dbL">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedItemCell" rowHeight="50" id="HCu-Hx-Y4f">
@@ -75,11 +75,13 @@
             </objects>
             <point key="canvasLocation" x="926" y="-33"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Completed-->
         <scene sceneID="3U8-pr-Rtq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="muB-XI-24E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Completed" image="check" id="GFj-Vw-G1u"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hEA-gX-dA4">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,4 +271,7 @@
             <point key="canvasLocation" x="2658" y="-760"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
 </document>

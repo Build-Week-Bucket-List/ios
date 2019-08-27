@@ -246,7 +246,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eXC-xc-x6Y"/>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="OpL-Zl-5Xq">
@@ -278,6 +277,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.06857926718" blue="0.010314948040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
@@ -291,10 +291,10 @@
         <!--CompletedBucketList-->
         <scene sceneID="gpv-FO-hCM">
             <objects>
-                <viewControllerPlaceholder storyboardName="CompletedBucketList" id="4NI-b9-1QR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HE9-Xa-TaD"/>
-                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="CompletedBucketList" id="4NI-b9-1QR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Completed" image="check" id="HE9-Xa-TaD"/>
+                </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="678" y="94"/>
         </scene>
@@ -302,7 +302,7 @@
         <scene sceneID="eKG-9k-69d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X7t-G2-VVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bucket List" id="Cxf-9A-p8W"/>
+                    <tabBarItem key="tabBarItem" title="Bucket List" image="list" id="Cxf-9A-p8W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YVR-xp-73E">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -328,6 +328,10 @@
             <point key="canvasLocation" x="2100" y="618"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="list" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u9f-hT-hb6"/>
     </inferredMetricsTieBreakers>
