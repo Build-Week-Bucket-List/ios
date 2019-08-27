@@ -26,6 +26,7 @@
 		37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37D059C323146312000434A8 /* BucketList.xcdatamodeld */; };
 		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
 		E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */; };
+		E5E9B8A52315CF800020FBD1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		37D059C423146312000434A8 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
 		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Bucket List/Storyboards/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "Bucket List/Storyboards/SignUpViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0ED3BAB02314821400D67370 /* NewItemViewController.swift */,
 				E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */,
+				E5E9B8A32315CF800020FBD1 /* SignUpViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				0ED3BAB22314821400D67370 /* NewItemViewController.swift in Sources */,
 				37D059BC2314557E000434A8 /* CoreDataStack.swift in Sources */,
 				37ABDA962314970000B8D611 /* Item+Convenience.swift in Sources */,
+				E5E9B8A52315CF800020FBD1 /* SignUpViewController.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
