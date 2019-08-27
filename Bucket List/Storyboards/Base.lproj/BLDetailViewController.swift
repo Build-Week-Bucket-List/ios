@@ -13,13 +13,13 @@ class BucketListDetailViewController: UIViewController {
     @IBOutlet weak var itemDescriptionLabel: UILabel!
     @IBOutlet weak var itemNotesTextView: UITextView!
     
-    // /* Uncomment when implemented - TODO
+    /* Uncomment when implemented - TODO
      var userData: userData? {
         didSet {
             updateViews
         }
      }
-    // */
+	*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
