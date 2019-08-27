@@ -9,6 +9,8 @@
 import UIKit
 
 class BucketListViewController: UIViewController, UITableViewDataSource {
+
+	let itemController = ItemController()
     
     @IBOutlet weak var bucketListTableView: UITableView!
 
