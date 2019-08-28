@@ -9,14 +9,22 @@
 import UIKit
 
 class BucketListViewController: UIViewController, UITableViewDataSource {
-
-	let itemController = ItemController()
     
     @IBOutlet weak var bucketListTableView: UITableView!
 
+	let token: String? = KeychainWrapper.standard.String(forKey: "token")
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("\(token ?? "")")
+		if UserDefaults.isFirstLaunch() && token == nil {
+			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+		} else if token == nil {
+			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+		} else if user.identifier == nil {
+			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+		}
+
         bucketListTableView.dataSource = self
 
         // Do any additional setup after loading the view.

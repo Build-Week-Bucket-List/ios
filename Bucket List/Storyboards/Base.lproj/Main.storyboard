@@ -256,7 +256,7 @@
                             </barButtonItem>
                             <barButtonItem title="Modal" id="FdB-ek-xTB">
                                 <connections>
-                                    <segue destination="UFB-oY-Qyq" kind="presentation" id="sny-BI-b1g"/>
+                                    <segue destination="UFB-oY-Qyq" kind="presentation" identifier="LoginModalSegue" id="sny-BI-b1g"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
