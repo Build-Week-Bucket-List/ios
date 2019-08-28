@@ -138,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="qah-ER-jAr">
-                                <rect key="frame" x="0.0" y="94" width="414" height="382"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="302"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-Ae-pOx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -146,36 +146,44 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-FV-gE1">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-FV-gE1">
                                         <rect key="frame" x="0.0" y="86" width="414" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="588624695.00217497">
                                             <!--2019-08-27 18:51:35 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96U-vh-Pfx">
-                                        <rect key="frame" x="0.0" y="352" width="414" height="30"/>
-                                        <state key="normal" title="Confirm"/>
-                                        <connections>
-                                            <action selector="confirmTapped:" destination="Hqt-1P-Rd4" eventType="touchUpInside" id="7WD-Ns-DdE"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lN7-Ir-zUP">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="rwl-OW-Sir">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="Hqt-1P-Rd4" id="B3E-TE-GRT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fu3-W4-mAN"/>
+                                    <barButtonItem systemItem="save" id="V5K-AC-RCQ">
+                                        <connections>
+                                            <action selector="saveTapped:" destination="Hqt-1P-Rd4" id="3Ue-6Z-2eh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qah-ER-jAr" firstAttribute="leading" secondItem="Eww-gh-x2s" secondAttribute="leading" id="JC5-8S-fv1"/>
+                            <constraint firstItem="lN7-Ir-zUP" firstAttribute="trailing" secondItem="x0k-W2-RMM" secondAttribute="trailing" id="K2N-34-PDp"/>
+                            <constraint firstItem="lN7-Ir-zUP" firstAttribute="leading" secondItem="x0k-W2-RMM" secondAttribute="leading" id="LJa-50-IwC"/>
                             <constraint firstItem="x0k-W2-RMM" firstAttribute="trailing" secondItem="qah-ER-jAr" secondAttribute="trailing" id="rEA-wB-5Tl"/>
                             <constraint firstItem="qah-ER-jAr" firstAttribute="top" secondItem="x0k-W2-RMM" secondAttribute="top" constant="50" id="sMi-H1-YD5"/>
+                            <constraint firstAttribute="bottom" secondItem="lN7-Ir-zUP" secondAttribute="bottom" id="yC1-kg-m8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x0k-W2-RMM"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select Date" id="sfU-jy-xuk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="BiQ-sd-fjp">
-                            <connections>
-                                <action selector="cancelTapped:" destination="Hqt-1P-Rd4" id="AIa-SG-kIv"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="BiQ-sd-fjp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="ziJ-FV-gE1" id="Zbs-d7-BcP"/>
@@ -246,7 +254,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eXC-xc-x6Y"/>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="OpL-Zl-5Xq">
@@ -278,10 +285,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.06857926718" blue="0.010314948040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
                         <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="t4y-N7-VGc"/>
+                        <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,17 +300,27 @@
         <scene sceneID="gpv-FO-hCM">
             <objects>
                 <viewControllerPlaceholder storyboardName="CompletedBucketList" id="4NI-b9-1QR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HE9-Xa-TaD"/>
+                    <tabBarItem key="tabBarItem" title="Completed" image="check" id="HE9-Xa-TaD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-425" y="660"/>
         </scene>
+        <!--FriendsListTab-->
+        <scene sceneID="C62-Ut-dgb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FriendsListTab" id="9mM-Ah-V50" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Freinds" image="friends" id="p8d-6U-tdm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-cG-5jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="362"/>
+        </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X7t-G2-VVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bucket List" id="Cxf-9A-p8W"/>
+                    <tabBarItem key="tabBarItem" title="Bucket List" image="list" id="Cxf-9A-p8W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YVR-xp-73E">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -328,6 +346,11 @@
             <point key="canvasLocation" x="2100" y="618"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="friends" width="26" height="26"/>
+        <image name="list" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u9f-hT-hb6"/>
     </inferredMetricsTieBreakers>

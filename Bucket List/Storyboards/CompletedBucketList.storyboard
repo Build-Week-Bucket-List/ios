@@ -13,45 +13,37 @@
         <!--Completed-->
         <scene sceneID="Nfz-TP-ibU">
             <objects>
-                <viewController id="XbI-ti-WFd" sceneMemberID="viewController">
+                <viewController id="XbI-ti-WFd" customClass="CompletedListViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oeT-o0-Inf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-Ls-dbL">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedItemCell" rowHeight="50" id="HCu-Hx-Y4f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedItemCell" textLabel="4xb-GH-37A" detailTextLabel="I4h-bE-hyn" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="HCu-Hx-Y4f" customClass="BucketListTableViewCell" customModule="Bucket_List" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HCu-Hx-Y4f" id="9gX-Po-q9s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OMB-gk-N5D">
-                                                    <rect key="frame" x="20" y="3.5" width="75" height="43"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBG-ff-ZuO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzg-Wd-UzG">
-                                                            <rect key="frame" x="0.0" y="27" width="75" height="16"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4xb-GH-37A">
+                                                    <rect key="frame" x="20" y="8" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I4h-bE-hyn">
+                                                    <rect key="frame" x="20" y="28.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="OMB-gk-N5D" secondAttribute="trailing" id="GB9-h5-2k1"/>
-                                                <constraint firstItem="OMB-gk-N5D" firstAttribute="centerY" secondItem="9gX-Po-q9s" secondAttribute="centerY" id="QOn-zd-IPk"/>
-                                                <constraint firstItem="OMB-gk-N5D" firstAttribute="leading" secondItem="9gX-Po-q9s" secondAttribute="leadingMargin" id="uwr-Pb-S4X"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="4c9-TT-fPJ" kind="show" id="UDC-qd-ihX"/>
@@ -70,16 +62,21 @@
                         <viewLayoutGuide key="safeArea" id="uwT-ZE-WxE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Completed" id="52l-EF-9mr"/>
+                    <connections>
+                        <outlet property="completedTableView" destination="9ua-Ls-dbL" id="Lcr-Pg-CwV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbO-Yp-nSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="-33"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Completed-->
         <scene sceneID="3U8-pr-Rtq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="muB-XI-24E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Completed" image="check" id="GFj-Vw-G1u"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hEA-gX-dA4">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -96,7 +93,7 @@
         <!--Item Title-->
         <scene sceneID="LeM-AL-Fx7">
             <objects>
-                <viewController id="4c9-TT-fPJ" customClass="BucketListDetailViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4c9-TT-fPJ" customClass="CompletedDetailViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PBL-bW-woG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +102,7 @@
                                 <rect key="frame" x="181.5" y="741.5" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <action selector="saveTapped:" destination="4c9-TT-fPJ" eventType="touchUpInside" id="neP-UW-fPr"/>
+                                    <action selector="updateTapped:" destination="4c9-TT-fPJ" eventType="touchUpInside" id="yha-s3-B74"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dLC-Kz-frG">
@@ -140,7 +137,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-6i-aIr">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-6i-aIr">
                                                 <rect key="frame" x="0.0" y="31" width="374" height="98"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -160,7 +157,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S64-DM-bF5">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S64-DM-bF5">
                                                 <rect key="frame" x="0.0" y="31" width="374" height="192"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -182,7 +179,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Reselect Date"/>
                                                 <connections>
-                                                    <segue destination="Ucf-Z7-R6p" kind="presentation" id="v8l-Lx-iJx"/>
+                                                    <segue destination="Ucf-Z7-R6p" kind="presentation" identifier="ReselectDateModalSegue" id="v8l-Lx-iJx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -202,10 +199,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Item Title" id="pv6-Ye-TcH"/>
                     <connections>
-                        <outlet property="itemDescriptionTextView" destination="tHI-6i-aIr" id="P0M-La-7lI"/>
-                        <outlet property="itemNameTextField" destination="hx7-tT-YGo" id="MVB-K1-h28"/>
-                        <outlet property="itemNotesTextView" destination="S64-DM-bF5" id="LrD-bj-4YD"/>
-                        <outlet property="selectedDateLabel" destination="UTh-eR-xki" id="n2i-mf-BTb"/>
+                        <outlet property="completedDescTextView" destination="tHI-6i-aIr" id="nvp-Lr-QVX"/>
+                        <outlet property="completedNameTextField" destination="hx7-tT-YGo" id="z4M-Oj-1da"/>
+                        <outlet property="completedNotesTextView" destination="S64-DM-bF5" id="cNV-6f-aXp"/>
+                        <outlet property="dateLabel" destination="UTh-eR-xki" id="jAe-Yg-EoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZM-lM-7i3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="2uF-Sv-wye">
-                                <rect key="frame" x="0.0" y="94" width="414" height="356"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="289"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5i-TN-9nt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -229,36 +226,44 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-Y6-XNu">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-Y6-XNu">
                                         <rect key="frame" x="0.0" y="73" width="414" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="588624695.00217497">
                                             <!--2019-08-27 18:51:35 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-hq-yLq">
-                                        <rect key="frame" x="0.0" y="326" width="414" height="30"/>
-                                        <state key="normal" title="Confirm"/>
-                                        <connections>
-                                            <action selector="confirmTapped:" destination="Ucf-Z7-R6p" eventType="touchUpInside" id="y2M-Lu-hTK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDF-yO-Ewq">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="xMy-hH-nqv">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="Ucf-Z7-R6p" id="KRD-CA-d81"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ijo-hn-8dh"/>
+                                    <barButtonItem systemItem="save" id="FnJ-pH-zHH">
+                                        <connections>
+                                            <action selector="saveTapped:" destination="Ucf-Z7-R6p" id="Raj-An-DiP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZDF-yO-Ewq" firstAttribute="trailing" secondItem="fRq-NS-mlm" secondAttribute="trailing" id="BMG-mA-Ahs"/>
                             <constraint firstItem="2uF-Sv-wye" firstAttribute="top" secondItem="fRq-NS-mlm" secondAttribute="top" constant="50" id="EF6-Ge-VSI"/>
                             <constraint firstItem="2uF-Sv-wye" firstAttribute="leading" secondItem="Gze-mb-AEv" secondAttribute="leading" id="Gku-Un-4PE"/>
+                            <constraint firstItem="ZDF-yO-Ewq" firstAttribute="leading" secondItem="fRq-NS-mlm" secondAttribute="leading" id="Sc6-AL-bER"/>
+                            <constraint firstAttribute="bottom" secondItem="ZDF-yO-Ewq" secondAttribute="bottom" id="iLC-ol-YWc"/>
                             <constraint firstItem="fRq-NS-mlm" firstAttribute="trailing" secondItem="2uF-Sv-wye" secondAttribute="trailing" id="odS-Rm-U9m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fRq-NS-mlm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select Date" id="WMp-Oa-QA1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="ene-OZ-NGM">
-                            <connections>
-                                <action selector="cancelTapped:" destination="Ucf-Z7-R6p" id="Dzj-YA-qnA"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="ene-OZ-NGM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="nRg-Y6-XNu" id="C2B-Zh-4i7"/>
@@ -269,4 +274,7 @@
             <point key="canvasLocation" x="2658" y="-760"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
 </document>
