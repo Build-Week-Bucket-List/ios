@@ -18,6 +18,8 @@ enum HTTPMethod: String {
 
 class ItemController {
 
+	static let itemController = ItemController()
+
 	let baseURL = URL(string: "hypedupharris-bucketlist.herokuapp.com/")!
 
 	func createItem(title: String, notes: String?) {
