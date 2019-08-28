@@ -24,7 +24,7 @@ class SelectDateViewController: UIViewController {
     
     var delegate: DatePickerDelegate?
     
-    @IBAction func confirmTapped(_ sender: Any) {
+    @IBAction func saveTapped(_ sender: Any) {
         delegate?.itemDateWasChosen(selectedDate: datePicker.date)
         dismiss(animated: true, completion: nil)
     }
