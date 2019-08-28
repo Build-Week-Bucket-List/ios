@@ -144,7 +144,7 @@ class UserController {
 
 				try CoreDataStack.shared.save()
 				if let token = self.token {
-					KeychainWrapper.standard.set(token, forKey: "token")
+					KeychainWrapper.standard.set(token, forKey: "access_token")
 					completion(.success(token))
 				}
 			} catch {
