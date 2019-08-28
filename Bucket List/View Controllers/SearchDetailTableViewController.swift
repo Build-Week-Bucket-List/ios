@@ -11,11 +11,7 @@ import UIKit
 class SearchDetailTableViewController: UITableViewController {
 
     
-    @IBOutlet weak var addButton: UIButton!
-    @IBAction func addButtontapped(_ sender: UIButton) {
-    }
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-    }
+    
     
     
     override func viewDidLoad() {
