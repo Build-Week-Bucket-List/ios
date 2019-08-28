@@ -13,22 +13,22 @@ class BucketListTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let token: String? = KeychainWrapper.standard.string(forKey: "token")
-    //    var user: UserRepresentation {
-    //        let moc = CoreDataStack.shared.mainContext
-    //        let request: NSFetchRequest<User> = User.fetchRequest()
-    //
-    //        do {
-    //            let users = try moc.fetch(request)
-    //            if let user = users.first {
-    //                return user.userRepresentation
-    //            }
-    //        } catch {
-    //            fatalError("Error performing fetch for users: \(error)")
-    //        }
-    //        return UserRepresentation()
-    //    }
-    
+    let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
+//        var user: UserRepresentation {
+//            let moc = CoreDataStack.shared.mainContext
+//            let request: NSFetchRequest<User> = User.fetchRequest()
+//
+//            do {
+//                let users = try moc.fetch(request)
+//                if let user = users.first {
+//                    return user.userRepresentation
+//                }
+//            } catch {
+//                fatalError("Error performing fetch for users: \(error)")
+//            }
+//            return UserRepresentation()
+//        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(token ?? "")")
