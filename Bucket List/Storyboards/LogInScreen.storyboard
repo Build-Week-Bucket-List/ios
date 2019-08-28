@@ -86,8 +86,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-N2-dJN">
+                                <rect key="frame" x="348" y="66" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ilx-sy-I5s" firstAttribute="top" secondItem="yJY-XL-01w" secondAttribute="bottom" constant="69" id="0XH-yT-N3J"/>
                             <constraint firstItem="yJY-XL-01w" firstAttribute="leading" secondItem="JqW-4p-hmQ" secondAttribute="leading" constant="109" id="8ka-IG-aLg"/>
