@@ -30,7 +30,7 @@ class UserController {
 
 	static let shared = UserController()
 
-	let baseURL = URL(string: "hypedupharris-bucketlist.herokuapp.com/")!
+	let baseURL = URL(string: "http://hypedupharris-bucketlist.herokuapp.com/")!
 
 	func signUp(user: UserRepresentation, loginType: LoginType, completion: @escaping(NetworkError?) -> Void) {
 		let requestURL = baseURL.appendingPathComponent("\(loginType.rawValue)")
@@ -135,7 +135,7 @@ class UserController {
 			do {
 				let result = try jsonDecoder.decode(UserResult.self, from: data)
 				self.token = result.token
-				self.user = result.user
+				self.user = user
 				let context = CoreDataStack.shared.mainContext
 
 				context.performAndWait {
