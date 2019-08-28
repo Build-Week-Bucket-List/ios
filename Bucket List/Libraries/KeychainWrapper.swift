@@ -200,6 +200,7 @@ open class KeychainWrapper {
 		}
 
 		return NSKeyedUnarchiver.unarchiveObject(with: keychainData) as? NSCoding
+//		return +unarchivedObjectOfClass(fromData: keychainData)
 	}
 
 

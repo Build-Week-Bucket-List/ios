@@ -9,33 +9,36 @@
 import Foundation
 
 struct UserResult: Codable {
-	var user: UserRepresentation
 	var token: String
+
+	enum CodingKeys: String, CodingKey {
+		case token = "access_token"
+	}
 }
 
 struct UserRepresentation: Codable {
-	let name: String?
+//	let name: String?
 	let username: String?
 	let password: String?
 	let identifier: Int?
 
 	enum CodingKeys: String, CodingKey {
-		case name
+//		case name
 		case username
 		case password
-		case identifier
+		case identifier = "userid"
 	}
 }
 
-struct UserRepresentations: Codable {
-	let results: [UserRepresentation]
-}
+//struct UserRepresentations: Codable {
+//	let results: [UserRepresentation]
+//}
 
 extension UserRepresentation: Equatable {
 	static func ==(lhs: UserRepresentation, rhs: User) -> Bool {
-		return lhs.identifier == Int(rhs.identifier) &&
-			lhs.name == rhs.name &&
-			lhs.username == rhs.username
+		return lhs.identifier == Int(rhs.userid)
+//			lhs.name == rhs.name &&
+//			lhs.username == rhs.username
 	}
 
 	static func ==(lhs: User, rhs: UserRepresentation) -> Bool {
