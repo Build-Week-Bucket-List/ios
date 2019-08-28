@@ -15,6 +15,7 @@
 		0ED3BAAC2314605200D67370 /* BucketListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */; };
 		370D11EE2316FC3B00D5711A /* JournalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */; };
 		371D090E23171E980018BEA5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090D23171E980018BEA5 /* Colors.swift */; };
+		371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090F231731170018BEA5 /* Journal+Convenience.swift */; };
 		37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA8F231496C200B8D611 /* UserRepresentation.swift */; };
 		37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */; };
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
@@ -51,6 +52,7 @@
 		370D11EC2316F90B00D5711A /* BucketList 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 3.xcdatamodel"; sourceTree = "<group>"; };
 		370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepresentation.swift; sourceTree = "<group>"; };
 		371D090D23171E980018BEA5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		371D090F231731170018BEA5 /* Journal+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Convenience.swift"; sourceTree = "<group>"; };
 		37ABDA8F231496C200B8D611 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				37ABDA8F231496C200B8D611 /* UserRepresentation.swift */,
 				37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */,
 				370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */,
+				371D090F231731170018BEA5 /* Journal+Convenience.swift */,
 				37ABDA93231496EF00B8D611 /* User+Convenience.swift */,
 				37ABDA952314970000B8D611 /* Item+Convenience.swift */,
 			);
@@ -304,6 +307,7 @@
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
 				37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */,
 				0ED3BAAC2314605200D67370 /* BucketListDetailViewController.swift in Sources */,
+				371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */,
 				0E8E00B823170A0700BD808C /* CompletedListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
