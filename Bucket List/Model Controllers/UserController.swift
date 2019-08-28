@@ -55,7 +55,8 @@ class UserController {
 				return
 			}
 
-			if error != nil {
+			if let error = error {
+				NSLog("Error signing up: \(error)")
 				completion(.otherError)
 				return
 			}
@@ -66,13 +67,15 @@ class UserController {
 			}
 
 			do {
-				self.user = try JSONDecoder().decode(UserRepresentation.self, from: data)
-				let context = CoreDataStack.shared.mainContext
-				context.performAndWait {
-					User(userRepresentation: self.user!)
+				if String(data: data, encoding: .utf8) == "User created successfully" {
+					let context = CoreDataStack.shared.mainContext
+					context.performAndWait {
+						User(userRepresentation: self.user!)
+					}
+					try CoreDataStack.shared.save()
 				}
-				try CoreDataStack.shared.save()
 			} catch {
+				NSLog("Error decoding user: \(error)")
 				completion(.noDecode)
 			}
 			completion(nil)
@@ -82,10 +85,7 @@ class UserController {
 
 	func logIn(user: UserRepresentation, loginType: LoginType, completion: @escaping(Result<String, NetworkError>) -> Void) {
 		let requestURL = baseURL.appendingPathComponent("\(loginType.rawValue)")
-		var request = URLRequest(url: requestURL)
-		request.httpMethod = HTTPMethod.post.rawValue
-		request.setValue("basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0", forHTTPHeaderField: "Authorization")
-		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
 
 		guard let username = user.username,
 			let password = user.password else {
@@ -94,16 +94,22 @@ class UserController {
 				return
 			}
 
-		var urlComponents = URLComponents()
+		var urlComponents = URLComponents(url: requestURL, resolvingAgainstBaseURL: true)
 		let grantTypeQuery = URLQueryItem(name: "grant_type", value: "password")
 		let usernameQuery = URLQueryItem(name: "username", value: "\(username)")
 		let passwordQuery = URLQueryItem(name: "password", value: "\(password)")
-		urlComponents.queryItems = [grantTypeQuery, usernameQuery, passwordQuery]
+		urlComponents?.queryItems = [grantTypeQuery, usernameQuery, passwordQuery]
 
-		var componentString = urlComponents.string
-		componentString?.removeFirst()
+		guard let url = urlComponents?.url else {
+			completion(.failure(.otherError))
+			return
+		}
+		var request = URLRequest(url: url)
+		request.httpMethod = HTTPMethod.post.rawValue
+		request.setValue("basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0", forHTTPHeaderField: "Authorization")
+		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-		request.httpBody = componentString?.data(using: .utf8)
+		// request.httpBody = componentString?.data(using: .utf8)
 
 		let jsonEncoder = JSONEncoder()
 		do {
