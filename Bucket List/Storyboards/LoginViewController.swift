@@ -62,19 +62,13 @@ class LoginViewController: UIViewController {
 
 				DispatchQueue.main.async {
 					let loginAlert = UIAlertController(title: "Sign Up successful. Now please log in", message: nil, preferredStyle: .alert)
-					loginAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+					loginAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+					self.present(loginAlert, animated: true, completion: {
 						self.segControl.selectedSegmentIndex = 1
-					}))
+						self.signupButton.setTitle("Login", for: .normal)
+						self.isLogin = true
+					})
 				}
-//				self.userController.logIn(user: user, loginType: .signIn, completion: { (result) in
-//					if (try? result.get()) != nil {
-//						DispatchQueue.main.async {
-//							self.dismiss(animated: true, completion: nil)
-//						}
-//					} else {
-//						NSLog("Error logging in with \(result)")
-//					}
-//				})
 			}
 		}
 	}
