@@ -62,9 +62,6 @@
                         <viewLayoutGuide key="safeArea" id="uwT-ZE-WxE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Completed" id="52l-EF-9mr"/>
-                    <connections>
-                        <outlet property="completedTableView" destination="9ua-Ls-dbL" id="Lcr-Pg-CwV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbO-Yp-nSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
