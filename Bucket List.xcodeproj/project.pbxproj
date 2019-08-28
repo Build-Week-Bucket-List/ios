@@ -33,6 +33,9 @@
 		E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E525A2852314881400D0CBAE /* LogInScreen.storyboard */; };
 		E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */; };
 		E5E9B8A82315E4680020FBD1 /* FriendsListTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */; };
+		E5E9B8AA231643250020FBD1 /* FriendsListTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */; };
+		E5E9B8AC2316FBD90020FBD1 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8AB2316FBD90020FBD1 /* FriendsTableViewCell.swift */; };
+		E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		E525A2852314881400D0CBAE /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Bucket List/Storyboards/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsListTab.storyboard; sourceTree = "<group>"; };
+		E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTabTableViewController.swift; sourceTree = "<group>"; };
+		E5E9B8AB2316FBD90020FBD1 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,9 @@
 				0ED3BAAA2314605200D67370 /* BucketListDetailViewController.swift */,
 				0E95DE8C2315B952006C58BA /* SelectDateViewController.swift */,
 				E5E8AF372315A8B600D01CD3 /* LoginViewController.swift */,
+				E5E9B8AB2316FBD90020FBD1 /* FriendsTableViewCell.swift */,
+				E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */,
+				E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */,
 				0E8E00B723170A0700BD808C /* CompletedListViewController.swift */,
 				0E0528202316F64600ED8E81 /* CompletedDetailViewController.swift */,
 			);
@@ -273,6 +282,8 @@
 				0ED3BAA923145F7400D67370 /* BucketListTableViewCell.swift in Sources */,
 				37D059C023145C5E000434A8 /* UserController.swift in Sources */,
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
+				E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */,
+				E5E9B8AC2316FBD90020FBD1 /* FriendsTableViewCell.swift in Sources */,
 				E5E8AF382315A8B600D01CD3 /* LoginViewController.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
@@ -283,6 +294,7 @@
 				0E8E00BA23170CF100BD808C /* BucketListTableViewController.swift in Sources */,
 				37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */,
 				0E95DE8E2315B952006C58BA /* SelectDateViewController.swift in Sources */,
+				E5E9B8AA231643250020FBD1 /* FriendsListTabTableViewController.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
