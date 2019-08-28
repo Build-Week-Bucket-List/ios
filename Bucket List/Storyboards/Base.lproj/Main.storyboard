@@ -288,8 +288,8 @@
                         <color key="selectedImageTintColor" red="1" green="0.06857926718" blue="0.010314948040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="t4y-N7-VGc"/>
                         <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
+                        <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="ouy-tJ-Viu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +314,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-cG-5jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647" y="362"/>
+            <point key="canvasLocation" x="827" y="617"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">
