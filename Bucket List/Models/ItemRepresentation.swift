@@ -15,15 +15,15 @@ struct ItemRepresentation: Codable {
 	let date: Date
 	let identifier: Int
 	let isCompleted: Bool
-	let notes: String
+	let journal: String
 
 	enum CodingKeys: String, CodingKey {
-		case itemTitle
-		case itemDescription
-		case date
-		case identifier
-		case isCompleted
-		case notes
+		case itemTitle = "itemtitle"
+		case itemDescription = "itemdesc"
+		case date = "created"
+		case identifier = "itemid"
+		case isCompleted = "completed"
+		case journal
 	}
 }
 
@@ -33,13 +33,13 @@ struct ItemRepresentations: Codable {
 
 extension ItemRepresentation: Equatable {
 	static func ==(lhs: ItemRepresentation, rhs: Item) -> Bool {
-		return lhs.identifier == Int(rhs.identifier) &&
-			lhs.itemTitle == rhs.itemTitle &&
-			lhs.itemDescription == rhs.itemDesc &&
-			lhs.date == rhs.date &&
-			lhs.identifier == Int(rhs.identifier) &&
-			lhs.isCompleted == rhs.completed &&
-			lhs.notes == rhs.notes
+		return lhs.identifier == Int(rhs.itemid) &&
+			lhs.itemTitle == rhs.itemtitle &&
+			lhs.itemDescription == rhs.itemdesc &&
+			lhs.date == rhs.created &&
+			lhs.identifier == Int(rhs.itemid) &&
+			lhs.isCompleted == rhs.completed
+//			lhs.journal == rhs.journal
 	}
 
 	static func ==(lhs: Item, rhs: ItemRepresentation) -> Bool {

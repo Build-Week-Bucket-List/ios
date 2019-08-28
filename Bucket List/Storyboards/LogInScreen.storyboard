@@ -23,12 +23,12 @@
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RcX-eG-RbR">
                                         <rect key="frame" x="20" y="0.0" width="334" height="29"/>
-                                        <color key="backgroundColor" red="1" green="0.04830961332" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Sign Up"/>
                                             <segment title="Log In"/>
                                         </segments>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="segControlAction:" destination="SuP-b7-fHq" eventType="valueChanged" id="M66-EV-X7i"/>
                                         </connections>
@@ -59,8 +59,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-pk-UhX">
                                         <rect key="frame" x="110" y="219" width="154" height="38"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="contentEdgeInsets" minX="50" minY="10" maxX="50" maxY="10"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
@@ -120,4 +119,5 @@
             <point key="canvasLocation" x="781.15942028985512" y="228.34821428571428"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.21768017680000001" green="1" blue="0.62836596830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
