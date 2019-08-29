@@ -22,13 +22,8 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     
-    var item: ItemController? /* { // TODO - Change type to single item
-        didSet {
-            updateViews
-        }
-     }
-	*/
-    
+//    var item: ItemController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
