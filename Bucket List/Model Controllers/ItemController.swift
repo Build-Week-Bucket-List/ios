@@ -40,12 +40,12 @@ class ItemController {
 		})
 	}
 
-	func updateItem(item: Item, title: String, description: String, isCompleted: Bool = false) {
-		CoreDataStack.shared.mainContext.performAndWait {
-			let itemRep = item.itemRepresetation
-
-		}
-	}
+//	func updateItem(item: Item, title: String, description: String, isCompleted: Bool = false) {
+//		CoreDataStack.shared.mainContext.performAndWait {
+//			let itemRep = item.itemRepresetation
+//
+//		}
+//	}
 
 	func post(itemRep inputItemRepresentation: ItemRepresentation, completion: @escaping (Result<ItemRepresentation, NetworkError>) -> Void = { _ in }) {
 		let createURL = baseURL.appendingPathComponent("list").appendingPathComponent("item")
@@ -135,19 +135,19 @@ class ItemController {
 		}.resume()
 	}
 
-	func fetchAllItems(user: UserRepresentation, completion: @escaping(Error?) -> Void) {
-
-		let jsonDecoder = JSONDecoder()
-
-		do {
-			let dict = try jsonDecoder.decode([String: [ItemRepresentation]?].self, from: data)
-			guard let itemArray = dict["items"] else {
-				completion(error)
-				return
-			}
-		} catch {
-			<#Log and deal with errors#>
-		}
-	}
+//	func fetchAllItems(user: UserRepresentation, completion: @escaping(Error?) -> Void) {
+//
+//		let jsonDecoder = JSONDecoder()
+//
+//		do {
+//			let dict = try jsonDecoder.decode([String: [ItemRepresentation]?].self, from: data)
+//			guard let itemArray = dict["items"] else {
+//				completion(error)
+//				return
+//			}
+//		} catch {
+//			<#Log and deal with errors#>
+//		}
+//	}
 }
 
