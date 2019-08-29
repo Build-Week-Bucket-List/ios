@@ -17,25 +17,6 @@ class BucketListTableViewController: UIViewController {
 	let userController = UserController()
     let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
 
-//	var user: UserRepresentation {
-//		let moc = CoreDataStack.shared.mainContext
-//		let request: NSFetchRequest<User> = User.fetchRequest()
-//
-//		do {
-//			let users = try moc.fetch(request)
-//			if let user = users.first {
-//				return user.userRepresentation
-//			}
-//		} catch {
-//			fatalError("Error performing fetch for users: \(error)")
-//		}
-//		return UserRepresentation()
-//	}
-
-//	var user: User {
-//		let moc = CoreDataStack.shared.mainContext
-//		let request = NSFetchRequest<User> = User.fetchRequest()
-//	}
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -61,25 +42,33 @@ class BucketListTableViewController: UIViewController {
         super.viewDidLoad()
         print("\(token ?? "")")
 		print(userController.user?.username ?? "No username?")
-		showModalIfNotLoggedIn()
-        
         setColors()
-        
         tableView.delegate = self
         tableView.dataSource = self
 		tableView.tableFooterView = UIView()
     }
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.reloadData()
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+//		showModalIfNotLoggedIn()
+	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
 		KeychainWrapper.standard.removeObject(forKey: "access_token")
+		print(token ?? "No Token")
 		showModalIfNotLoggedIn()
 	}
 
 	func showModalIfNotLoggedIn() {
 		if UserDefaults.isFirstLaunch() && token == nil {
-			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		} else if token == nil {
-			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		}
 		print("\(token ?? "")")
 	}
@@ -104,12 +93,13 @@ class BucketListTableViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BLDetailViewShowSegue" {
-			if let detailVC = segue.destination as? BucketListDetailViewController {
-//                let indexPath = tableView.indexPathForSelectedRow {
-                detailVC.title = "Add New Adventure"
+			if let detailVC = segue.destination as? BucketListDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+				detailVC.item = fetchedResultsController.object(at: indexPath)
             }
         } else if segue.identifier == "AddNewItemShowSegue" {
             if let detailVC = segue.destination as? BucketListDetailViewController {
+				detailVC.title = "Add New Adventure"
 				detailVC.itemController = itemController
             }
         }
