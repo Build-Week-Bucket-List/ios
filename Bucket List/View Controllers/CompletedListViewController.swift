@@ -18,6 +18,7 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
         setColors()
         
         completedTableView.dataSource = self
+		completedTableView.tableFooterView = UIView()
         
         // Do any additional setup after loading the view.
     }
