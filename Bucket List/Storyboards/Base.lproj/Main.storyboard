@@ -108,6 +108,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
@@ -116,16 +117,27 @@
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="qRH-89-fuF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Kp2-pz-eRT" appends="YES" id="EDh-sF-fKx"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Item" id="0Ma-bR-NCo"/>
                     <connections>
-                        <outlet property="itemDescriptionTextView" destination="y7X-Cm-yaC" id="5LT-23-e1x"/>
-                        <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="0dI-cC-5uw"/>
-                        <outlet property="itemNotesTextView" destination="m0z-9K-7IM" id="WvB-kd-xYe"/>
-                        <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="D9T-m6-RHa"/>
+                        <outlet property="descriptionLabel" destination="s2q-up-QaV" id="JkB-NN-MSA"/>
+                        <outlet property="itemDescriptionTextView" destination="y7X-Cm-yaC" id="jfu-ia-gwK"/>
+                        <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="SRI-Xu-xBN"/>
+                        <outlet property="itemNotesTextView" destination="m0z-9K-7IM" id="gOb-NM-9ee"/>
+                        <outlet property="nameLabel" destination="3PK-VA-Cat" id="O6m-3s-BCg"/>
+                        <outlet property="notesLabel" destination="RdF-W2-t2q" id="8Gk-FC-xlA"/>
+                        <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="Nmz-25-3Ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljM-tS-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Kp2-pz-eRT">
+                    <connections>
+                        <action selector="tapToDismissKeyboard:" destination="Wjc-KB-oRJ" id="GmW-BL-Osn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2911.594202898551" y="225"/>
         </scene>
@@ -187,6 +199,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="ziJ-FV-gE1" id="Zbs-d7-BcP"/>
+                        <outlet property="titleLabel" destination="DYD-Ae-pOx" id="CBJ-tD-2Hg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ri1-TZ-3px" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,11 +218,11 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BucketListCell" textLabel="gkR-l6-GW2" detailTextLabel="VQr-TK-Kmx" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="P4F-43-K2L" customClass="BucketListTableViewCell" customModule="Bucket_List" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BucketListCell" textLabel="gkR-l6-GW2" detailTextLabel="VQr-TK-Kmx" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="P4F-43-K2L" customClass="BucketListTableViewCell" customModule="Bucket_List" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4F-43-K2L" id="U3K-Al-wzk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gkR-l6-GW2">
@@ -280,6 +293,7 @@
                     <connections>
                         <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
                         <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="ouy-tJ-Viu"/>
+                        <segue destination="9mM-Ah-V50" kind="relationship" relationship="viewControllers" id="sEi-8f-QVI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +308,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="660"/>
+            <point key="canvasLocation" x="220" y="629"/>
         </scene>
         <!--FriendsListTab-->
         <scene sceneID="C62-Ut-dgb">
@@ -304,7 +318,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-cG-5jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827" y="617"/>
+            <point key="canvasLocation" x="783" y="628"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">

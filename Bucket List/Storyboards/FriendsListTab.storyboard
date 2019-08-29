@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" id="LkY-gn-bTY">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="6K9-qL-WTW">
                             <connections>
-                                <segue destination="zcI-aH-PLc" kind="presentation" id="eHD-By-OpH"/>
+                                <segue destination="zcI-aH-PLc" kind="show" id="eHD-By-OpH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="4763.768115942029" y="82.366071428571431"/>
         </scene>
-        <!--Title-->
+        <!--Search Friends-->
         <scene sceneID="200-Jg-dqa">
             <objects>
                 <tableViewController id="zcI-aH-PLc" customClass="SearchDetailTableViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,40 +61,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Knl-CJ-sut">
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Enter their username..." id="sqe-58-JdB">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem id="AiO-Xd-xJB">
-                                    <barButtonItem key="rightBarButtonItem" title="Done" id="Ftx-1X-qxI"/>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="dfp-VB-XJc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedFriendCell" id="dfp-VB-XJc">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfp-VB-XJc" id="kDt-Nh-4xU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qw0-Je-Y5M">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="labelandButtonCell" id="hbN-uN-HKB">
-                                <rect key="frame" x="0.0" y="116" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hbN-uN-HKB" id="M3C-bx-weY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="273" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-IC-ctO">
-                                            <rect key="frame" x="20" y="16" width="374" height="11.5"/>
+                                            <rect key="frame" x="20" y="7" width="374" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-dc-eC6">
                                                     <rect key="frame" x="0.0" y="0.0" width="36.5" height="11.5"/>
@@ -110,12 +91,9 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="slZ-IC-ctO" secondAttribute="bottom" constant="16" id="AaU-z6-f4m"/>
-                                        <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="ZZa-rX-7hE"/>
-                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="leading" secondItem="M3C-bx-weY" secondAttribute="leading" constant="20" id="lgL-2N-sbI"/>
-                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="M3C-bx-weY" secondAttribute="leading" constant="20" id="spT-nS-oGl"/>
-                                        <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="uLz-ar-mpW"/>
-                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="top" secondItem="M3C-bx-weY" secondAttribute="top" constant="16" id="wxa-6S-MaF"/>
+                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="leading" secondItem="kDt-Nh-4xU" secondAttribute="leading" constant="20" id="OfB-pP-8um"/>
+                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="centerY" secondItem="kDt-Nh-4xU" secondAttribute="centerY" id="Tg3-I3-mlL"/>
+                                        <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="XWd-W6-tfy"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -126,7 +104,9 @@
                             <outlet property="delegate" destination="zcI-aH-PLc" id="jYd-fq-BUA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="FKy-vu-g9M"/>
+                    <navigationItem key="navigationItem" title="Search Friends" id="zQc-z9-sZn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="PQc-bc-fKL"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bY-6G-So8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

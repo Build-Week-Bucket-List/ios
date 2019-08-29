@@ -12,10 +12,14 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
     
     var date: Date?
     
-    @IBOutlet weak var completedNameTextField: UITextField!
-    @IBOutlet weak var completedDescTextView: UITextView!
-    @IBOutlet weak var completedNotesTextView: UITextView!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var selectedDateLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
     
     var item: ItemController? /* { // TODO - Change type to single item
      didSet {
@@ -23,20 +27,37 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
      }
      }
      */
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTextViewBorder(textView: completedNotesTextView)
-        setTextViewBorder(textView: completedDescTextView)
+        setColors()
+        
+        setTextViewBorder(textView: notesTextView)
+        setTextViewBorder(textView: descTextView)
+    }
+    
+    private func setColors() {
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        view.backgroundColor = .lochmara
+        
+        nameTextField.backgroundColor = .lochmara
+        descTextView.backgroundColor = .lochmara
+        notesTextView.backgroundColor = .lochmara
+        
+        nameLabel.textColor = .twilightBlue
+        descriptionLabel.textColor = .twilightBlue
+        notesLabel.textColor = .twilightBlue
+        selectedDateLabel.textColor = .twilightBlue
     }
     
     private func setTextViewBorder(textView: UITextView) {
-        let borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
-        
         // Set UITextView border to look like a UITextField
         textView.layer.borderWidth = 0.5
-        textView.layer.borderColor = borderColor.cgColor
+        textView.layer.borderColor = UIColor.borderColor.cgColor
         textView.layer.cornerRadius = 8
     }
     
@@ -65,27 +86,27 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func updateItem() -> Bool {
-        if let title = completedNameTextField.text, let desc = completedDescTextView,
-            let notes = completedNotesTextView, let date = date {
-//            item.title = title
-//            item.description = description
-//            item.notes = notes
-//            item.date = date
+        if let _ = nameTextField.text, let _ = descTextView,
+            let _ = notesTextView, let _ = date {
+            //            item.title = title
+            //            item.description = description
+            //            item.notes = notes
+            //            item.date = date
             return true
         }
         return false
     }
-    
+
     func itemDateWasChosen(selectedDate: Date) {
         date = selectedDate
-        dateLabel.text = dateFormatter.string(for: selectedDate)
+        selectedDateLabel.text = dateFormatter.string(for: selectedDate)
         date = selectedDate
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ReselectDateModalSegue" {
             if let datePickerVC = segue.destination as? SelectDateViewController {
@@ -93,5 +114,5 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
             }
         }
     }
-
+    
 }
