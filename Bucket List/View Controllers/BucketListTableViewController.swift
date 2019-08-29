@@ -63,8 +63,8 @@ class BucketListTableViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BLDetailViewShowSegue" {
-            if let detailVC = segue.destination as? BucketListDetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
+			if let detailVC = segue.destination as? BucketListDetailViewController {
+//                let indexPath = tableView.indexPathForSelectedRow {
                 detailVC.title = "Add New Adventure"
             }
         } else if segue.identifier == "AddNewItemShowSegue" {
