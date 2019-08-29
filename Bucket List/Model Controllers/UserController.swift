@@ -61,23 +61,23 @@ class UserController {
 				return
 			}
 
-			guard let data = data else {
-				completion(.badData)
-				return
-			}
+//			guard let data = data else {
+//				completion(.badData)
+//				return
+//			}
 
-			do {
-				if String(data: data, encoding: .utf8) == "User created successfully" {
-					let context = CoreDataStack.shared.mainContext
-					context.performAndWait {
-						User(userRepresentation: self.user!)
-					}
-					try CoreDataStack.shared.save()
-				}
-			} catch {
-				NSLog("Error decoding user: \(error)")
-				completion(.noDecode)
-			}
+//			do {
+//				if String(data: data, encoding: .utf8) == "User created successfully" {
+//					let context = CoreDataStack.shared.mainContext
+//					context.performAndWait {
+//						User(userRepresentation: self.user)
+//					}
+//					try CoreDataStack.shared.save()
+//				}
+//			} catch {
+//				NSLog("Error decoding user: \(error)")
+//				completion(.noDecode)
+//			}
 			completion(nil)
 		}.resume()
 	}

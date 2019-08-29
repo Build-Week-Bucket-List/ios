@@ -10,15 +10,16 @@ import Foundation
 import CoreData
 
 extension Item {
-	@discardableResult convenience init(title: String, description: String, completed: Bool = false, date: Date, identifier: Int64, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+	@discardableResult convenience init(title: String, description: String, completed: Bool = false, identifier: Int64?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
 		self.init(context: context)
 
 		self.itemtitle = title
 		self.itemdesc = description
 		self.completed = completed
-		self.created = date
-		self.itemid = identifier
+		if let identifier = identifier {
+			self.itemid = identifier
+		}
 
 	}
 
