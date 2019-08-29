@@ -78,13 +78,13 @@
                                             <rect key="frame" x="20" y="7" width="374" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-dc-eC6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-jV-Qea">
-                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="30"/>
+                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="11.5"/>
                                                     <state key="normal" title="Add"/>
                                                 </button>
                                             </subviews>

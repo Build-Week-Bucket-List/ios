@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signupButton.layer.cornerRadius = signupButton.frame.height / 2
+    self.view.backgroundColor = UIColor.eveningSea
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
