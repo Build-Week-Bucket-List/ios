@@ -13,13 +13,17 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 
 	var date: Date?
 	var itemController: ItemController?
+	var item: Item? {
+		didSet {
+			updateViews()
+		}
+	}
 
 	@IBOutlet weak var itemNameTextField: UITextField!
 	@IBOutlet weak var itemDescriptionTextView: UITextView!
 	@IBOutlet weak var selectedDateLabel: UILabel!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var selectDateButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
@@ -67,10 +71,10 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	}
 
 	private func updateViews() {
-//		Uncomment when implemented - TODO
-//		guard let item = item else { return }
-//		itemDescriptionLabel.text = item.description
-
+		guard let item = item else { return }
+		itemDescriptionTextView.text = item.description
+		selectedDateLabel.text = dateFormatter.string(from: item.created ?? Date())
+		itemNameTextField.text = item.itemtitle
 	}
 
 	var dateFormatter: DateFormatter = {
@@ -102,6 +106,7 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		selectedDateLabel.isHidden = false
 		date = selectedDate
 	}
+	
 
 	// MARK: - Navigation
 

@@ -60,14 +60,15 @@ class BucketListTableViewController: UIViewController {
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
 		KeychainWrapper.standard.removeObject(forKey: "access_token")
+		print(token ?? "No Token")
 		showModalIfNotLoggedIn()
 	}
 
 	func showModalIfNotLoggedIn() {
 		if UserDefaults.isFirstLaunch() && token == nil {
-			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		} else if token == nil {
-			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		}
 		print("\(token ?? "")")
 	}
@@ -92,12 +93,13 @@ class BucketListTableViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BLDetailViewShowSegue" {
-			if let detailVC = segue.destination as? BucketListDetailViewController {
-//                let indexPath = tableView.indexPathForSelectedRow {
-                detailVC.title = "Add New Adventure"
+			if let detailVC = segue.destination as? BucketListDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+				detailVC.item = fetchedResultsController.object(at: indexPath)
             }
         } else if segue.identifier == "AddNewItemShowSegue" {
             if let detailVC = segue.destination as? BucketListDetailViewController {
+				detailVC.title = "Add New Adventure"
 				detailVC.itemController = itemController
             }
         }
