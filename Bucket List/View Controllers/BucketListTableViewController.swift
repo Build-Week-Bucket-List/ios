@@ -40,7 +40,7 @@ class BucketListTableViewController: UIViewController {
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
-		let titleDescriptor = NSSortDescriptor(key: "title", ascending: true)
+		let titleDescriptor = NSSortDescriptor(key: "itemtitle", ascending: true)
 		let completedDescriptor = NSSortDescriptor(key: "completed", ascending: true)
 		fetchRequest.sortDescriptors = [completedDescriptor, titleDescriptor]
 
@@ -71,6 +71,7 @@ class BucketListTableViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+		tableView.tableFooterView = UIView()
     }
     
     private func setColors() {
