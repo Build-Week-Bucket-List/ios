@@ -40,19 +40,19 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
     }
     
     private func setColors() {
-        tabBarController?.tabBar.tintColor = UIColor.lochmara
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.lochmara]
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.lochmara]
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
-        view.backgroundColor = .twilightBlue
+        view.backgroundColor = .lochmara
         
-        itemNameTextField.backgroundColor = .twilightBlue
-        itemDescriptionTextView.backgroundColor = .twilightBlue
-        itemNotesTextView.backgroundColor = .twilightBlue
+        itemNameTextField.backgroundColor = .lochmara
+        itemDescriptionTextView.backgroundColor = .lochmara
+        itemNotesTextView.backgroundColor = .lochmara
         
-        nameLabel.textColor = .lochmara
-        descriptionLabel.textColor = .lochmara
-        notesLabel.textColor = .lochmara
+        nameLabel.textColor = .twilightBlue
+        descriptionLabel.textColor = .twilightBlue
+        notesLabel.textColor = .twilightBlue
     }
     
     private func setTextViewBorder(textView: UITextView) {
