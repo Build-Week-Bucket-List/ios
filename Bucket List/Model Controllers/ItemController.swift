@@ -22,8 +22,10 @@ class ItemController {
 
 	let baseURL = URL(string: "hypedupharris-bucketlist.herokuapp.com/list")!
 
-	func createItem(title: String, description: String, isCompleted: Bool = false, date: Date, userID: Int) {
+	func createItem(title: String, description: String, isCompleted: Bool = false, date: Date?, userID: Int?) {
 		CoreDataStack.shared.mainContext.performAndWait {
+			guard let date = date,
+				let userID = userID else { return }
 			let item = Item(title: title, description: description, date: date, identifier: Int64(userID))
 			do {
 				try CoreDataStack.shared.save()
@@ -82,14 +84,5 @@ class ItemController {
 //			}
 		}.resume()
 	}
-
-
-
-
-
-
-
-
-
 }
 

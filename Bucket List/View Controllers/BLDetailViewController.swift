@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class BucketListDetailViewController: UIViewController, DatePickerDelegate {
+class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
 	var date: Date?
 	var itemController: ItemController?
@@ -17,20 +18,17 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
 	@IBOutlet weak var itemDescriptionTextView: UITextView!
 	@IBOutlet weak var itemNotesTextView: UITextView!
 	@IBOutlet weak var selectedDateLabel: UILabel!
-
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var notesLabel: UILabel!
 
-	//    var item: ItemController?
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		itemNameTextField.delegate = self
+		itemDescriptionTextView.delegate = self
+		itemNotesTextView.delegate = self
 		setColors()
-
 		selectedDateLabel.isHidden = true
-
 		setTextViewBorder(textView: itemNotesTextView)
 		setTextViewBorder(textView: itemDescriptionTextView)
 	}
@@ -54,17 +52,17 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
 	private func setTextViewBorder(textView: UITextView) {
 		let borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
 
-		// Set UITextView border to look like a UITextField
+// 		Set UITextView border to look like a UITextField
 		textView.layer.borderWidth = 0.5
 		textView.layer.borderColor = borderColor.cgColor
 		textView.layer.cornerRadius = 8
 	}
 
 	private func updateViews() {
-		// Uncomment when implemented - TODO
-		//        guard let item = item else { return }
-		//        itemDescriptionLabel.text = item.description
-		//        itemNotesTextView.text = item.notes
+//		Uncomment when implemented - TODO
+//		guard let item = item else { return }
+//		itemDescriptionLabel.text = item.description
+//		itemNotesTextView.text = item.notes
 
 
 	}
@@ -76,8 +74,22 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
 	}()
 
 	@IBAction func saveTapped(_ sender: UIButton) {
-		
+		guard let itemController = itemController,
+			let title = itemNameTextField.text,
+			!title.isEmpty,
+			let description = itemDescriptionTextView.text,
+			!description.isEmpty else { return }
+
+		itemController.createItem(title: title, description: description, date: nil, userID: nil)
+		self.navigationController?.popToRootViewController(animated: true)
 	}
+
+	@IBAction func tapToDismissKeyboard(_ sender: UITapGestureRecognizer) {
+		itemNameTextField.resignFirstResponder()
+		itemDescriptionTextView.resignFirstResponder()
+		itemNotesTextView.resignFirstResponder()
+	}
+
 
 	func itemDateWasChosen(selectedDate: Date) {
 		date = selectedDate
