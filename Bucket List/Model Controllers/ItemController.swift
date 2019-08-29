@@ -18,75 +18,136 @@ enum HTTPMethod: String {
 
 class ItemController {
 
-	static let shared = ItemController()
+	init() {
 
-	let baseURL = URL(string: "hypedupharris-bucketlist.herokuapp.com/list")!
-
-	func createItem(title: String, description: String, isCompleted: Bool = false, date: Date?, userID: Int?) {
-		CoreDataStack.shared.mainContext.performAndWait {
-			guard let date = date,
-				let userID = userID else { return }
-			let item = Item(title: title, description: description, date: date, identifier: Int64(userID))
-			do {
-				try CoreDataStack.shared.save()
-			} catch {
-				NSLog("Error saving context when creating an item: \(error)")
-			}
-			post(item: item.itemRepresetation)
-		}
 	}
 
+	static let shared = ItemController()
 
+	let baseURL = URL(string: "http://hypedupharris-bucketlist.herokuapp.com")!
 
+	func createItem(title: String, description: String) {
+		let item = ItemRepresentation(itemTitle: title, itemDescription: description, date: nil, identifier: nil, isCompleted: nil, journal: nil)
+		post(itemRep: item, completion: { (result) in
+			do {
+				let serverItemRep = try result.get()
+				let backgroundContext = CoreDataStack.shared.container.newBackgroundContext()
+				Item(itemRepresentation: serverItemRep, context: backgroundContext)
+				try CoreDataStack.shared.save(context: backgroundContext)
+			} catch {
+				NSLog("Error creating item on server: \(error)")
+			}
+		})
+	}
 
+//	func updateItem(item: Item, title: String, description: String, isCompleted: Bool = false) {
+//		CoreDataStack.shared.mainContext.performAndWait {
+//			let itemRep = item.itemRepresetation
+//
+//		}
+//	}
 
-	func post(item: ItemRepresentation, completion: @escaping(Error?) -> Void = { _ in }) {
-		let createURL = baseURL.appendingPathComponent("item")
+	func post(itemRep inputItemRepresentation: ItemRepresentation, completion: @escaping (Result<ItemRepresentation, NetworkError>) -> Void = { _ in }) {
+		let createURL = baseURL.appendingPathComponent("list").appendingPathComponent("item")
 		var request = URLRequest(url: createURL)
 		request.httpMethod = HTTPMethod.post.rawValue
-		request.setValue("application/json", forHTTPHeaderField: "Conttent-Type")
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		guard let token = KeychainWrapper.standard.string(forKey: "access_token") else {
+			print("User not logged in.")
+			completion(.failure(.noAuth))
+			return
+		}
+		request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
 		do {
 			let jsonEncoder = JSONEncoder()
-			request.httpBody = try jsonEncoder.encode(item)
+			request.httpBody = try jsonEncoder.encode(inputItemRepresentation)
 		} catch {
-			NSLog("Error encoding \(item): \(error)")
-			completion(error)
+			NSLog("Error encoding \(inputItemRepresentation): \(error)")
+			completion(.failure(.noEncode))
 			return
 		}
 
-		URLSession.shared.dataTask(with: request) { (_, response, error) in
+		URLSession.shared.dataTask(with: request) { (data, response, error) in
+
 			if let error = error {
 				NSLog("Error POSTing item to server: \(error)")
-				completion(error)
+				completion(.failure(.otherError))
 				return
 			}
 
-//			guard let data = data else { return }
 
-			if let response = response as? HTTPURLResponse,
-				(200...299).contains (response.statusCode) {
-				completion(nil)
-				return
-			} else {
-				completion(NetworkError.badResponse)
+
+			guard let response = response as? HTTPURLResponse,
+				(200...299).contains (response.statusCode) else {
+					completion(.failure(.badResponse))
+					return
 			}
-//			do {
-//				let itemID = try JSONDecoder().decode([Int].self, from: data)
-//				let backgroundContext = CoreDataStack.shared.container.newBackgroundContext()
-//				backgroundContext.performAndWait {
-//					let item = Item(itemRepresentation: item, context: backgroundContext)
-//					guard let identifier = itemID.first else { return }
-//					item?.itemid = Int64(identifier)
-//				}
-//			} catch {
-//
-//			}
+
+			guard let data = data else { return }
+
+			do {
+				let serverItemRep = try JSONDecoder().decode(ItemRepresentation.self, from: data)
+				let backgroundContext = CoreDataStack.shared.container.newBackgroundContext()
+				backgroundContext.performAndWait {
+					Item(itemRepresentation: serverItemRep, context: backgroundContext)
+				}
+				try CoreDataStack.shared.save(context: backgroundContext)
+			} catch {
+				NSLog("Error decoding data or saving context - item: \(data) | error: \(error)")
+			}
 		}.resume()
 	}
 
-	func fetchAllItems(user: UserRepresentation, completion: @escaping(Error?) -> Void) {
-		
+	func putUpdate(itemRepresentation: ItemRepresentation, completion: @escaping (Result<Data?, NetworkError>) -> Void = { _ in }) {
+		guard let identifier = itemRepresentation.identifier else { return }
+		let updateRequestURL = baseURL.appendingPathComponent("list").appendingPathComponent("item").appendingPathComponent("\(identifier)")
+		var request = URLRequest(url: updateRequestURL)
+		request.httpMethod = HTTPMethod.put.rawValue
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		guard let token = KeychainWrapper.standard.string(forKey: "access_token") else {
+			print("User not logged in.")
+			completion(.failure(.noAuth))
+			return
+		}
+		request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+		do {
+			request.httpBody = try JSONEncoder().encode(itemRepresentation)
+		} catch {
+			NSLog("Error encoding itemRepresentation: \(error)")
+		}
+
+		URLSession.shared.dataTask(with: request) { (_, response, error) in
+
+			if let error = error {
+				NSLog("Error PUTing item to server: \(error)")
+				completion(.failure(.otherError))
+				return
+			}
+
+			guard let response = response as? HTTPURLResponse,
+				response.statusCode == 200 else {
+					completion(.failure(.badResponse))
+					return
+			}
+			completion(.success(nil))
+		}.resume()
 	}
+
+//	func fetchAllItems(user: UserRepresentation, completion: @escaping(Error?) -> Void) {
+//
+//		let jsonDecoder = JSONDecoder()
+//
+//		do {
+//			let dict = try jsonDecoder.decode([String: [ItemRepresentation]?].self, from: data)
+//			guard let itemArray = dict["items"] else {
+//				completion(error)
+//				return
+//			}
+//		} catch {
+//			<#Log and deal with errors#>
+//		}
+//	}
 }
 

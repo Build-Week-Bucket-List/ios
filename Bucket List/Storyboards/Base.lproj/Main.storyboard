@@ -258,6 +258,11 @@
                         <viewLayoutGuide key="safeArea" id="kXx-Kh-VID"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bucket List" id="hfq-LQ-FSU">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="O1p-4b-GGL">
+                            <connections>
+                                <action selector="logoutTapped:" destination="rVx-Ru-FAd" id="LdR-lY-kiO"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="OpL-Zl-5Xq">
                                 <connections>
