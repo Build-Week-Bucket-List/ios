@@ -40,6 +40,8 @@
 		E5E9B8A82315E4680020FBD1 /* FriendsListTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */; };
 		E5E9B8AA231643250020FBD1 /* FriendsListTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */; };
 		E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */; };
+		E5EA9BA82318446200AC2085 /* searchFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA9BA72318446200AC2085 /* searchFriendsTableViewCell.swift */; };
+		E5EA9BAA2318448E00AC2085 /* FriendsTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EA9BA92318448E00AC2085 /* FriendsTabTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsListTab.storyboard; sourceTree = "<group>"; };
 		E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTabTableViewController.swift; sourceTree = "<group>"; };
 		E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
+		E5EA9BA72318446200AC2085 /* searchFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		E5EA9BA92318448E00AC2085 /* FriendsTabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTabTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				3741E6492317797600ADC248 /* BucketListTableViewCell.swift */,
+				E5EA9BA72318446200AC2085 /* searchFriendsTableViewCell.swift */,
+				E5EA9BA92318448E00AC2085 /* FriendsTabTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,10 +299,12 @@
 				37CCA8AD231601BE00867A5D /* UserDefaultsHelper.swift in Sources */,
 				3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */,
 				371D090E23171E980018BEA5 /* Colors.swift in Sources */,
+				E5EA9BA82318446200AC2085 /* searchFriendsTableViewCell.swift in Sources */,
 				37D059C023145C5E000434A8 /* UserController.swift in Sources */,
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
 				0E8E00BE2317545700BD808C /* CompletedDetailViewController.swift in Sources */,
 				E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */,
+				E5EA9BAA2318448E00AC2085 /* FriendsTabTableViewCell.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
 				370D11EE2316FC3B00D5711A /* JournalRepresentation.swift in Sources */,
