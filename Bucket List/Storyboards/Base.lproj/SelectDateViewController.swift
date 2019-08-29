@@ -15,11 +15,20 @@ protocol DatePickerDelegate {
 class SelectDateViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var titleLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setColors()
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func setColors() {
+        view.backgroundColor = .twilightBlue
+        titleLabel.textColor = .lochmara
+        datePicker.setValue(UIColor.lochmara, forKeyPath: "textColor")
     }
     
     var delegate: DatePickerDelegate?
