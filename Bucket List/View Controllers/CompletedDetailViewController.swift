@@ -14,12 +14,13 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
-    @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var selectedDateLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var notesLabel: UILabel!
+    
+    @IBOutlet weak var reselectDateButton: UIButton!
+    @IBOutlet weak var updateButton: UIButton!
     
     var item: ItemController? /* { // TODO - Change type to single item
      didSet {
@@ -33,7 +34,6 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         
         setColors()
         
-        setTextViewBorder(textView: notesTextView)
         setTextViewBorder(textView: descTextView)
     }
     
@@ -42,15 +42,24 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
+
+        
+        reselectDateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
+        reselectDateButton.backgroundColor = UIColor.eveningSea
+        reselectDateButton.layer.cornerRadius = reselectDateButton.frame.height / 2
+        
+        updateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
+        updateButton.backgroundColor = UIColor.eveningSea
+        updateButton.layer.cornerRadius = updateButton.frame.height / 2
+        
         view.backgroundColor = .lochmara
         
         nameTextField.backgroundColor = .lochmara
         descTextView.backgroundColor = .lochmara
-        notesTextView.backgroundColor = .lochmara
         
         nameLabel.textColor = .twilightBlue
         descriptionLabel.textColor = .twilightBlue
-        notesLabel.textColor = .twilightBlue
         selectedDateLabel.textColor = .twilightBlue
     }
     
@@ -65,7 +74,6 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         // Uncomment when implemented - TODO
         //        guard let item = item, let date = date else { return }
         //        itemDescriptionLabel.text = item.description
-        //        itemNotesTextView.text = item.notes
         //        dateLabel.text = dateFormatter.string(for: date)
     }
     
@@ -86,13 +94,18 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        nameTextField.resignFirstResponder()
+        descTextView.resignFirstResponder()
+    }
+    
 
     private func updateItem() -> Bool {
         if let _ = nameTextField.text, let _ = descTextView,
-            let _ = notesTextView, let _ = date {
+            let _ = date {
             //            item.title = title
             //            item.description = description
-            //            item.notes = notes
             //            item.date = date
             return true
         }
