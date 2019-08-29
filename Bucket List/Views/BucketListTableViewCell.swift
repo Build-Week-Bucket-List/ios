@@ -9,19 +9,34 @@
 import UIKit
 
 class BucketListTableViewCell: UITableViewCell {
+
+	var item: Item? {
+		didSet {
+			updateViews()
+		}
+	}
     
     @IBOutlet weak var bucketListItemName: UILabel!
     @IBOutlet weak var bucketListItemDescription: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+		updateViews()
+//		cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+//		cell.detailTextLabel?.text = "The description of cell number \(indexPath.row + 1)"
+//
+
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+	private func updateViews() {
+		
+	}
 
-        // Configure the view for the selected state
-    }
+	private func setUI() {
+//		self.accessoryType = .disclosureIndicator
+//		cell.textLabel?.textColor = .twilightBlue
+//		cell.detailTextLabel?.textColor = .twilightBlue
+//		cell.backgroundColor = .lochmara
+	}
 
 }

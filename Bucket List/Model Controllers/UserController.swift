@@ -161,7 +161,9 @@ class UserController {
 		}.resume()
 	}
 
+
 	func fetchUser() {
-		
+
 	}
 }
+
