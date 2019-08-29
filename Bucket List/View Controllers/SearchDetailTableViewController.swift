@@ -10,8 +10,9 @@ import UIKit
 
 class SearchDetailTableViewController: UITableViewController {
 
-    
-    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+    }
+    @IBOutlet weak var searchFriendsBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -29,23 +30,25 @@ class SearchDetailTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedFriendCell", for: indexPath) as? searchFriendsTableViewCell else {
+            return UITableViewCell()
+        }
 
-        // Configure the cell...
+        // guard let user = ""
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
