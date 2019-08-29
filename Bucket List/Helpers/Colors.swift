@@ -20,4 +20,6 @@ extension UIColor {
     static let lochmara = UIColor(red: 0.17, green: 0.45, blue: 0.63, alpha: 1.00)
     
     static let bunker = UIColor(red: 0.07, green: 0.07, blue: 0.08, alpha: 1.00)
+    
+    static let borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
 }
