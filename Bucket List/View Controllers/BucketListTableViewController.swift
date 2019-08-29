@@ -17,25 +17,6 @@ class BucketListTableViewController: UIViewController {
 	let userController = UserController()
     let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
 
-//	var user: UserRepresentation {
-//		let moc = CoreDataStack.shared.mainContext
-//		let request: NSFetchRequest<User> = User.fetchRequest()
-//
-//		do {
-//			let users = try moc.fetch(request)
-//			if let user = users.first {
-//				return user.userRepresentation
-//			}
-//		} catch {
-//			fatalError("Error performing fetch for users: \(error)")
-//		}
-//		return UserRepresentation()
-//	}
-
-//	var user: User {
-//		let moc = CoreDataStack.shared.mainContext
-//		let request = NSFetchRequest<User> = User.fetchRequest()
-//	}
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -61,14 +42,21 @@ class BucketListTableViewController: UIViewController {
         super.viewDidLoad()
         print("\(token ?? "")")
 		print(userController.user?.username ?? "No username?")
-		showModalIfNotLoggedIn()
-        
         setColors()
-        
         tableView.delegate = self
         tableView.dataSource = self
 		tableView.tableFooterView = UIView()
     }
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.reloadData()
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+//		showModalIfNotLoggedIn()
+	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
 		KeychainWrapper.standard.removeObject(forKey: "access_token")

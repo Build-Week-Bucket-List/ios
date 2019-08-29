@@ -205,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BucketListCell" rowHeight="50" id="P4F-43-K2L" customClass="BucketListTableViewCell" customModule="Bucket_List" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BucketListCell" rowHeight="50" id="P4F-43-K2L" customClass="BucketListTableViewCell" customModule="Bucket_List" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4F-43-K2L" id="U3K-Al-wzk">
@@ -270,21 +270,15 @@
                                 <action selector="logoutTapped:" destination="rVx-Ru-FAd" id="LdR-lY-kiO"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="OpL-Zl-5Xq">
-                                <connections>
-                                    <segue destination="Wjc-KB-oRJ" kind="show" identifier="AddNewItemShowSegue" id="u9f-hT-hb6"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Modal" id="FdB-ek-xTB">
-                                <connections>
-                                    <segue destination="UFB-oY-Qyq" kind="presentation" identifier="LoginModalSegue" id="sny-BI-b1g"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OpL-Zl-5Xq">
+                            <connections>
+                                <segue destination="Wjc-KB-oRJ" kind="show" identifier="AddNewItemShowSegue" id="u9f-hT-hb6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="zOj-aw-26U" id="yKh-NH-6rd"/>
+                        <segue destination="UFB-oY-Qyq" kind="presentation" identifier="showLoginModalSegue" id="8K9-DA-kJu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilC-eq-Qsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,7 +314,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="629"/>
+            <point key="canvasLocation" x="320" y="639"/>
         </scene>
         <!--FriendsListTab-->
         <scene sceneID="C62-Ut-dgb">
@@ -330,7 +324,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-cG-5jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="628"/>
+            <point key="canvasLocation" x="717" y="639"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">
@@ -359,7 +353,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FE-rA-8PQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="618"/>
+            <point key="canvasLocation" x="2100" y="639"/>
         </scene>
     </scenes>
     <resources>
