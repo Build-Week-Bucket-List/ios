@@ -15,9 +15,23 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setColors()
+        
         completedTableView.dataSource = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    private func setColors() {
+        navigationController?.navigationBar.barTintColor = UIColor.eveningSea
+        tabBarController?.tabBar.barTintColor = UIColor.eveningSea
+        
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        completedTableView.backgroundColor = .lochmara
+        view.backgroundColor = .lochmara
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,6 +43,10 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
         
         cell.textLabel?.text = "Completed Cell #\(indexPath.row + 1)"
         cell.detailTextLabel?.text = "The description of cell number \(indexPath.row + 1)"
+        
+        cell.textLabel?.textColor = .twilightBlue
+        cell.detailTextLabel?.textColor = .twilightBlue
+        cell.backgroundColor = .lochmara
         
         return cell
     }

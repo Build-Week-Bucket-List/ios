@@ -18,6 +18,10 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
     @IBOutlet weak var itemNotesTextView: UITextView!
     @IBOutlet weak var selectedDateLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
+    
     var item: ItemController? /* { // TODO - Change type to single item
         didSet {
             updateViews
@@ -28,10 +32,28 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setColors()
+        
         selectedDateLabel.isHidden = true
         
         setTextViewBorder(textView: itemNotesTextView)
         setTextViewBorder(textView: itemDescriptionTextView)
+    }
+    
+    private func setColors() {
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        view.backgroundColor = .lochmara
+        
+        itemNameTextField.backgroundColor = .lochmara
+        itemDescriptionTextView.backgroundColor = .lochmara
+        itemNotesTextView.backgroundColor = .lochmara
+        
+        nameLabel.textColor = .twilightBlue
+        descriptionLabel.textColor = .twilightBlue
+        notesLabel.textColor = .twilightBlue
     }
     
     private func setTextViewBorder(textView: UITextView) {

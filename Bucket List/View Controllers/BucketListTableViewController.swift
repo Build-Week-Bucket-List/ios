@@ -39,8 +39,22 @@ class BucketListTableViewController: UIViewController {
             performSegue(withIdentifier: "LoginModalSegue", sender: self)
         }
         
+        setColors()
+        
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func setColors() {
+        navigationController?.navigationBar.barTintColor = UIColor.eveningSea
+        tabBarController?.tabBar.barTintColor = UIColor.eveningSea
+        
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        tableView.backgroundColor = .lochmara
+        view.backgroundColor = .lochmara
     }
     
     
@@ -71,6 +85,10 @@ extension BucketListTableViewController: UITableViewDelegate, UITableViewDataSou
         
         cell.textLabel?.text = "Cell \(indexPath.row + 1)"
         cell.detailTextLabel?.text = "The description of cell number \(indexPath.row + 1)"
+        
+        cell.textLabel?.textColor = .twilightBlue
+        cell.detailTextLabel?.textColor = .twilightBlue
+        cell.backgroundColor = .lochmara
         
         return cell
     }

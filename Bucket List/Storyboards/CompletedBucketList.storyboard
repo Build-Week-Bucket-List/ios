@@ -102,7 +102,7 @@
                                 <rect key="frame" x="181.5" y="741.5" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <action selector="updateTapped:" destination="4c9-TT-fPJ" eventType="touchUpInside" id="yha-s3-B74"/>
+                                    <action selector="updateTapped:" destination="4c9-TT-fPJ" eventType="touchUpInside" id="JO7-Uk-Mox"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dLC-Kz-frG">
@@ -199,10 +199,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Item Title" id="pv6-Ye-TcH"/>
                     <connections>
-                        <outlet property="completedDescTextView" destination="tHI-6i-aIr" id="nvp-Lr-QVX"/>
-                        <outlet property="completedNameTextField" destination="hx7-tT-YGo" id="z4M-Oj-1da"/>
-                        <outlet property="completedNotesTextView" destination="S64-DM-bF5" id="cNV-6f-aXp"/>
-                        <outlet property="dateLabel" destination="UTh-eR-xki" id="jAe-Yg-EoO"/>
+                        <outlet property="descTextView" destination="tHI-6i-aIr" id="pdF-YU-XEg"/>
+                        <outlet property="descriptionLabel" destination="Fym-qC-5Pt" id="DJH-MK-IfW"/>
+                        <outlet property="nameLabel" destination="TvC-RA-he9" id="8la-lg-mOF"/>
+                        <outlet property="nameTextField" destination="hx7-tT-YGo" id="5IB-De-eQh"/>
+                        <outlet property="notesLabel" destination="SPB-RG-LIF" id="cGH-JE-Dtm"/>
+                        <outlet property="notesTextView" destination="S64-DM-bF5" id="Zdk-Lt-vbM"/>
+                        <outlet property="selectedDateLabel" destination="UTh-eR-xki" id="GHb-gt-tHz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZM-lM-7i3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,6 +270,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="nRg-Y6-XNu" id="C2B-Zh-4i7"/>
+                        <outlet property="titleLabel" destination="E5i-TN-9nt" id="9Zy-HM-6QU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ms5-el-9iQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

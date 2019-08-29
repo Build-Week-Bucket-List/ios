@@ -119,10 +119,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Item" id="0Ma-bR-NCo"/>
                     <connections>
-                        <outlet property="itemDescriptionTextView" destination="y7X-Cm-yaC" id="5LT-23-e1x"/>
-                        <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="0dI-cC-5uw"/>
-                        <outlet property="itemNotesTextView" destination="m0z-9K-7IM" id="WvB-kd-xYe"/>
-                        <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="D9T-m6-RHa"/>
+                        <outlet property="descriptionLabel" destination="s2q-up-QaV" id="JkB-NN-MSA"/>
+                        <outlet property="itemDescriptionTextView" destination="y7X-Cm-yaC" id="jfu-ia-gwK"/>
+                        <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="SRI-Xu-xBN"/>
+                        <outlet property="itemNotesTextView" destination="m0z-9K-7IM" id="gOb-NM-9ee"/>
+                        <outlet property="nameLabel" destination="3PK-VA-Cat" id="O6m-3s-BCg"/>
+                        <outlet property="notesLabel" destination="RdF-W2-t2q" id="8Gk-FC-xlA"/>
+                        <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="Nmz-25-3Ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljM-tS-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,6 +190,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="ziJ-FV-gE1" id="Zbs-d7-BcP"/>
+                        <outlet property="titleLabel" destination="DYD-Ae-pOx" id="CBJ-tD-2Hg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ri1-TZ-3px" userLabel="First Responder" sceneMemberID="firstResponder"/>
