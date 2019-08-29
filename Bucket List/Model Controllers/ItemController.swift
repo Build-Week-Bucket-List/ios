@@ -84,5 +84,9 @@ class ItemController {
 //			}
 		}.resume()
 	}
+
+	func fetchAllItems(user: UserRepresentation, completion: @escaping(Error?) -> Void) {
+		
+	}
 }
 
