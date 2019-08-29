@@ -123,11 +123,13 @@
             </objects>
             <point key="canvasLocation" x="5566.666666666667" y="-398.4375"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friends-->
         <scene sceneID="zUE-zp-xnx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RV0-ff-yBQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="3FE-dL-riO"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7ek-k1-BNI">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,4 +144,7 @@
             <point key="canvasLocation" x="3853.6231884057975" y="82.366071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="friends" width="26" height="26"/>
+    </resources>
 </document>
