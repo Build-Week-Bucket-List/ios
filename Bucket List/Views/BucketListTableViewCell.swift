@@ -28,8 +28,9 @@ class BucketListTableViewCell: UITableViewCell {
     }
 
 	private func updateViews() {
-        bucketListItemName.text = "Cell"
-        bucketListItemDescription.text = "The description of cell"
+		guard let item = item else { return }
+        bucketListItemName.text = item.itemtitle
+        bucketListItemDescription.text = item.itemdesc
 	}
     
     @IBAction func doneTapped(_ sender: UIButton) {
