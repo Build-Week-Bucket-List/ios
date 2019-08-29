@@ -12,7 +12,8 @@ import CoreData
 class BucketListTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+
+	let itemController = ItemController()
     let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
 //        var user: UserRepresentation {
 //            let moc = CoreDataStack.shared.mainContext
@@ -54,7 +55,7 @@ class BucketListTableViewController: UIViewController {
             }
         } else if segue.identifier == "AddNewItemShowSegue" {
             if let detailVC = segue.destination as? BucketListDetailViewController {
-                detailVC.itemNameTextField.text = "Something"
+				detailVC.itemController = itemController
             }
         }
     }
