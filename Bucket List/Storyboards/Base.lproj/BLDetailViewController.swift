@@ -11,6 +11,7 @@ import UIKit
 class BucketListDetailViewController: UIViewController, DatePickerDelegate {
 
     var date: Date?
+	var itemController: ItemController?
     
     @IBOutlet weak var itemNameTextField: UITextField!
     @IBOutlet weak var itemDescriptionTextView: UITextView!
@@ -80,7 +81,7 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate {
 	}()
     
     @IBAction func saveTapped(_ sender: UIButton) {
-        
+
     }
     
     func itemDateWasChosen(selectedDate: Date) {
