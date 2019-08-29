@@ -274,8 +274,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="ene-OZ-NGM"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="xMy-hH-nqv" id="9Wc-D0-0t7"/>
                         <outlet property="datePicker" destination="nRg-Y6-XNu" id="C2B-Zh-4i7"/>
+                        <outlet property="saveButton" destination="FnJ-pH-zHH" id="qDp-0w-3pq"/>
                         <outlet property="titleLabel" destination="E5i-TN-9nt" id="9Zy-HM-6QU"/>
+                        <outlet property="toolBar" destination="ZDF-yO-Ewq" id="7RP-SJ-6Zi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ms5-el-9iQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
