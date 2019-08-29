@@ -10,6 +10,7 @@
 		0E8E00B823170A0700BD808C /* CompletedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E00B723170A0700BD808C /* CompletedListViewController.swift */; };
 		0E8E00BA23170CF100BD808C /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E00B923170CF100BD808C /* BucketListTableViewController.swift */; };
 		0E8E00BE2317545700BD808C /* CompletedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E00BD2317545700BD808C /* CompletedDetailViewController.swift */; };
+		0E8E00C02318443A00BD808C /* CompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E00BF2318443A00BD808C /* CompletedTableViewCell.swift */; };
 		0E95DE902315C437006C58BA /* CompletedBucketList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */; };
 		370D11EE2316FC3B00D5711A /* JournalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */; };
 		371D090E23171E980018BEA5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090D23171E980018BEA5 /* Colors.swift */; };
@@ -48,6 +49,7 @@
 		0E8E00B723170A0700BD808C /* CompletedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedListViewController.swift; sourceTree = "<group>"; };
 		0E8E00B923170CF100BD808C /* BucketListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
 		0E8E00BD2317545700BD808C /* CompletedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedDetailViewController.swift; sourceTree = "<group>"; };
+		0E8E00BF2318443A00BD808C /* CompletedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTableViewCell.swift; sourceTree = "<group>"; };
 		0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompletedBucketList.storyboard; sourceTree = "<group>"; };
 		370D11EB2316D7EF00D5711A /* BucketList 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 2.xcdatamodel"; sourceTree = "<group>"; };
 		370D11EC2316F90B00D5711A /* BucketList 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				3741E6492317797600ADC248 /* BucketListTableViewCell.swift */,
 				E5EA9BA72318446200AC2085 /* searchFriendsTableViewCell.swift */,
 				E5EA9BA92318448E00AC2085 /* FriendsTabTableViewCell.swift */,
+				0E8E00BF2318443A00BD808C /* CompletedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				0E8E00BA23170CF100BD808C /* BucketListTableViewController.swift in Sources */,
 				37CCA8A92315D3C100867A5D /* KeychainWrapper.swift in Sources */,
 				E5E9B8AA231643250020FBD1 /* FriendsListTabTableViewController.swift in Sources */,
+				0E8E00C02318443A00BD808C /* CompletedTableViewCell.swift in Sources */,
 				37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */,
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
@@ -469,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D6VB3396MT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Bucket List/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,7 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D6VB3396MT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Bucket List/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

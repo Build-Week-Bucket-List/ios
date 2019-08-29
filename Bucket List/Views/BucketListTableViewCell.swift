@@ -18,25 +18,32 @@ class BucketListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bucketListItemName: UILabel!
     @IBOutlet weak var bucketListItemDescription: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 		updateViews()
-//		cell.textLabel?.text = "Cell \(indexPath.row + 1)"
-//		cell.detailTextLabel?.text = "The description of cell number \(indexPath.row + 1)"
-//
+        setUI()
 
     }
 
 	private func updateViews() {
-		
+        bucketListItemName.text = "Cell"
+        bucketListItemDescription.text = "The description of cell"
 	}
+    
+    @IBAction func doneTapped(_ sender: UIButton) {
+        
+    }
 
 	private func setUI() {
-//		self.accessoryType = .disclosureIndicator
-//		cell.textLabel?.textColor = .twilightBlue
-//		cell.detailTextLabel?.textColor = .twilightBlue
-//		cell.backgroundColor = .lochmara
+        self.accessoryType = .disclosureIndicator
+        
+        bucketListItemName.textColor = .twilightBlue
+        bucketListItemDescription.textColor = .twilightBlue
+        backgroundColor = .lochmara
+        doneButton.setTitleColor(UIColor.twilightBlue, for: .normal)
+        doneButton.backgroundColor = UIColor.eveningSea
 	}
 
 }

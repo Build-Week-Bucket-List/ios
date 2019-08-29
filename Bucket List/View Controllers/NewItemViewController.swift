@@ -18,6 +18,8 @@ class NewItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
+        
         // Set UITextViews border to look like a UITextField
         itemNotesTextView.layer.borderWidth = 0.5
         itemNotesTextView.layer.borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.1).cgColor
