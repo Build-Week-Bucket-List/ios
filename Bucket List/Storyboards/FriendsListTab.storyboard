@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RV0-ff-yBQ">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -71,7 +71,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dfp-VB-XJc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="dfp-VB-XJc">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfp-VB-XJc" id="kDt-Nh-4xU">
@@ -86,34 +86,36 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="hbN-uN-HKB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="labelandButtonCell" id="hbN-uN-HKB">
                                 <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hbN-uN-HKB" id="M3C-bx-weY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="273" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-IC-ctO">
-                                            <rect key="frame" x="20" y="16" width="374" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="273" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-IC-ctO">
+                                            <rect key="frame" x="20" y="16" width="374" height="11.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-dc-eC6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-jV-Qea">
-                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="30"/>
+                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="11.5"/>
                                                     <state key="normal" title="Add"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="slZ-IC-ctO" secondAttribute="bottom" constant="16" id="AaU-z6-f4m"/>
                                         <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="ZZa-rX-7hE"/>
                                         <constraint firstItem="slZ-IC-ctO" firstAttribute="leading" secondItem="M3C-bx-weY" secondAttribute="leading" constant="20" id="lgL-2N-sbI"/>
                                         <constraint firstItem="slZ-IC-ctO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="M3C-bx-weY" secondAttribute="leading" constant="20" id="spT-nS-oGl"/>
                                         <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="uLz-ar-mpW"/>
+                                        <constraint firstItem="slZ-IC-ctO" firstAttribute="top" secondItem="M3C-bx-weY" secondAttribute="top" constant="16" id="wxa-6S-MaF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
