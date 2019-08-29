@@ -16,8 +16,8 @@ class FriendsListTabTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lochmara
-        navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.twilightBlue
-
+        navigationController?.navigationBar.barTintColor = UIColor.eveningSea
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.twilightBlue]
         
         
         // Uncomment the following line to preserve selection between presentations

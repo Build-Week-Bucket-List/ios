@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Friends List Tab Table View Controller-->
+        <!--Bucket List Friends-->
         <scene sceneID="Vrz-hH-hpp">
             <objects>
                 <tableViewController id="aJg-qy-GN1" customClass="FriendsListTabTableViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                             <outlet property="delegate" destination="aJg-qy-GN1" id="xhb-wq-9rh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="LkY-gn-bTY">
+                    <navigationItem key="navigationItem" title="Bucket List Friends" id="LkY-gn-bTY">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="6K9-qL-WTW">
                             <connections>
                                 <action selector="searchButtonTApped:" destination="aJg-qy-GN1" id="RkD-nv-cW3"/>
@@ -106,6 +106,9 @@
                                         <constraint firstAttribute="trailing" secondItem="slZ-IC-ctO" secondAttribute="trailing" constant="20" id="XWd-W6-tfy"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="searchedFriendCell" destination="7Ac-dc-eC6" id="AdY-s2-beL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>

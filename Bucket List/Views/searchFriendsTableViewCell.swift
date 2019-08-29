@@ -10,10 +10,13 @@ import UIKit
 
 class searchFriendsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var searchedFriendCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
 
         self.backgroundColor = UIColor.lochmara
+        searchedFriendCell.textColor = UIColor.twilightBlue
+        
         
     }
 
