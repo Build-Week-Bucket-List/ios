@@ -32,6 +32,11 @@ class BucketListTableViewController: UIViewController {
 //		return UserRepresentation()
 //	}
 
+//	var user: User {
+//		let moc = CoreDataStack.shared.mainContext
+//		let request = NSFetchRequest<UserRepresentation> = UserRepresentation.fetchRequest()
+//	}
+
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
