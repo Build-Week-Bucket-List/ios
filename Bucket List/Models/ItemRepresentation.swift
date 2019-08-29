@@ -10,12 +10,12 @@ import Foundation
 
 
 struct ItemRepresentation: Codable {
-	let itemTitle: String
-	let itemDescription: String
-	let date: Date
-	let identifier: Int
-	let isCompleted: Bool
-	let journal: String
+	let itemTitle: String?
+	let itemDescription: String?
+	let date: Date?
+	let identifier: Int?
+	let isCompleted: Bool?
+	let journal: JournalRepresentation?
 
 	enum CodingKeys: String, CodingKey {
 		case itemTitle = "itemtitle"

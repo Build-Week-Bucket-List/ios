@@ -86,10 +86,10 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func updateItem() -> Bool {
-        if let title = nameTextField.text, let desc = descTextView,
-            let notes = notesTextView, let date = date {
+        if let _ = nameTextField.text, let _ = descTextView,
+            let _ = notesTextView, let _ = date {
             //            item.title = title
             //            item.description = description
             //            item.notes = notes
@@ -98,7 +98,7 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         }
         return false
     }
-    
+
     func itemDateWasChosen(selectedDate: Date) {
         date = selectedDate
         selectedDateLabel.text = dateFormatter.string(for: selectedDate)

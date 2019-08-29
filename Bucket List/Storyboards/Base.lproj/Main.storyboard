@@ -284,6 +284,7 @@
                     <connections>
                         <segue destination="X7t-G2-VVF" kind="relationship" relationship="viewControllers" id="dWg-vS-n2K"/>
                         <segue destination="4NI-b9-1QR" kind="relationship" relationship="viewControllers" id="ouy-tJ-Viu"/>
+                        <segue destination="9mM-Ah-V50" kind="relationship" relationship="viewControllers" id="sEi-8f-QVI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOO-Kr-I8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,7 +299,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRD-Zr-ITX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="660"/>
+            <point key="canvasLocation" x="220" y="629"/>
         </scene>
         <!--FriendsListTab-->
         <scene sceneID="C62-Ut-dgb">
@@ -308,7 +309,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpq-cG-5jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827" y="617"/>
+            <point key="canvasLocation" x="783" y="628"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eKG-9k-69d">
