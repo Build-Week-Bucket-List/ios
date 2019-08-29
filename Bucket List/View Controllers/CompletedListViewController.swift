@@ -40,14 +40,7 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedItemCell", for: indexPath)
-        
-        cell.textLabel?.text = "Completed Cell #\(indexPath.row + 1)"
-        cell.detailTextLabel?.text = "The description of cell number \(indexPath.row + 1)"
-        
-        cell.textLabel?.textColor = .twilightBlue
-        cell.detailTextLabel?.textColor = .twilightBlue
-        cell.backgroundColor = .lochmara
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedItemCell", for: indexPath) as? CompletedTableViewCell else { return UITableViewCell() }
         
         return cell
     }

@@ -92,6 +92,8 @@ class BucketListTableViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
+        
         tableView.backgroundColor = .lochmara
         view.backgroundColor = .lochmara
     }

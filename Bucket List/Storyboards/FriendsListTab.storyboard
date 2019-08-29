@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsListCell" id="bJk-UH-ETx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsListCell" id="bJk-UH-ETx" customClass="FriendsTabTableViewCell" customModule="Bucket_List" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJk-UH-ETx" id="Waj-za-EaX">
@@ -34,6 +34,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendsListUsernameLabel" destination="AAT-DF-c3n" id="HBF-En-RkU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,10 +47,14 @@
                     <navigationItem key="navigationItem" id="LkY-gn-bTY">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="6K9-qL-WTW">
                             <connections>
+                                <action selector="searchButtonTApped:" destination="aJg-qy-GN1" id="RkD-nv-cW3"/>
                                 <segue destination="zcI-aH-PLc" kind="show" id="eHD-By-OpH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchButton" destination="6K9-qL-WTW" id="fq1-bd-vb5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ri-be-inR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +74,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedFriendCell" id="dfp-VB-XJc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedFriendCell" id="dfp-VB-XJc" customClass="searchFriendsTableViewCell" customModule="Bucket_List" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfp-VB-XJc" id="kDt-Nh-4xU">
@@ -78,14 +85,17 @@
                                             <rect key="frame" x="20" y="7" width="374" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-dc-eC6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="11.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-jV-Qea">
-                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="11.5"/>
+                                                    <rect key="frame" x="309.5" y="0.0" width="64.5" height="30"/>
                                                     <state key="normal" title="Add"/>
+                                                    <connections>
+                                                        <action selector="addButtonTapped:" destination="zcI-aH-PLc" eventType="touchUpInside" id="EdB-4N-pI0"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -104,19 +114,22 @@
                             <outlet property="delegate" destination="zcI-aH-PLc" id="jYd-fq-BUA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search Friends" id="zQc-z9-sZn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="PQc-bc-fKL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search Friends" id="zQc-z9-sZn"/>
+                    <connections>
+                        <outlet property="searchFriendsBar" destination="sqe-58-JdB" id="rtw-GC-aU3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bY-6G-So8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5566.666666666667" y="-398.4375"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friends-->
         <scene sceneID="zUE-zp-xnx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RV0-ff-yBQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="3FE-dL-riO"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7ek-k1-BNI">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,4 +144,7 @@
             <point key="canvasLocation" x="3853.6231884057975" y="82.366071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="friends" width="26" height="26"/>
+    </resources>
 </document>

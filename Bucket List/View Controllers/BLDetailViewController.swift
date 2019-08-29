@@ -16,20 +16,20 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 
 	@IBOutlet weak var itemNameTextField: UITextField!
 	@IBOutlet weak var itemDescriptionTextView: UITextView!
-	@IBOutlet weak var itemNotesTextView: UITextView!
 	@IBOutlet weak var selectedDateLabel: UILabel!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
-	@IBOutlet weak var notesLabel: UILabel!
+    
+    @IBOutlet weak var selectDateButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		itemNameTextField.delegate = self
 		itemDescriptionTextView.delegate = self
-		itemNotesTextView.delegate = self
 		setColors()
 		selectedDateLabel.isHidden = true
-		setTextViewBorder(textView: itemNotesTextView)
 		setTextViewBorder(textView: itemDescriptionTextView)
 	}
 
@@ -37,16 +37,24 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		tabBarController?.tabBar.tintColor = UIColor.twilightBlue
 		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        selectDateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
+        selectDateButton.backgroundColor = .eveningSea
+        selectDateButton.layer.cornerRadius = selectDateButton.frame.height / 2
+        
+        saveButton.setTitleColor(UIColor.twilightBlue, for: .normal)
+        saveButton.backgroundColor = .eveningSea
+        saveButton.layer.cornerRadius = saveButton.frame.height / 2
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
 
 		view.backgroundColor = .lochmara
 
 		itemNameTextField.backgroundColor = .lochmara
 		itemDescriptionTextView.backgroundColor = .lochmara
-		itemNotesTextView.backgroundColor = .lochmara
 
 		nameLabel.textColor = .twilightBlue
 		descriptionLabel.textColor = .twilightBlue
-		notesLabel.textColor = .twilightBlue
 	}
 
 	private func setTextViewBorder(textView: UITextView) {
@@ -62,8 +70,6 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 //		Uncomment when implemented - TODO
 //		guard let item = item else { return }
 //		itemDescriptionLabel.text = item.description
-//		itemNotesTextView.text = item.notes
-
 
 	}
 
@@ -87,7 +93,6 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	@IBAction func tapToDismissKeyboard(_ sender: UITapGestureRecognizer) {
 		itemNameTextField.resignFirstResponder()
 		itemDescriptionTextView.resignFirstResponder()
-		itemNotesTextView.resignFirstResponder()
 	}
 
 

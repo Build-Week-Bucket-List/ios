@@ -10,9 +10,13 @@ import UIKit
 
 class FriendsListTabTableViewController: UITableViewController {
     
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    @IBAction func searchButtonTApped(_ sender: UIBarButtonItem) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.twilightBlue
+        self.view.backgroundColor = UIColor.lochmara
+        navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.twilightBlue
 
         
         
@@ -25,32 +29,34 @@ class FriendsListTabTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return
-//    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 10
+    }
 
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell")
-//        // Configure the cell...
-//
-//        return cell
-//    }
-//
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell") as? FriendsTabTableViewCell else {
+            return UITableViewCell()
+        }
+        // guard let user = ""
+
+        return cell
     }
-    */
+
+//
+////     Override to support conditional editing of the table view.
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//         Return false if you do not want the specified item to be editable.
+//        return true
+//    }
+//    */
 
     /*
     // Override to support editing the table view.
