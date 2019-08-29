@@ -34,7 +34,7 @@ class BucketListTableViewController: UIViewController {
 
 //	var user: User {
 //		let moc = CoreDataStack.shared.mainContext
-//		let request = NSFetchRequest<UserRepresentation> = UserRepresentation.fetchRequest()
+//		let request = NSFetchRequest<User> = User.fetchRequest()
 //	}
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
@@ -61,11 +61,7 @@ class BucketListTableViewController: UIViewController {
         super.viewDidLoad()
         print("\(token ?? "")")
 		print(userController.user?.username ?? "No username?")
-        if UserDefaults.isFirstLaunch() && token == nil {
-            performSegue(withIdentifier: "LoginModalSegue", sender: self)
-        } else if token == nil {
-            performSegue(withIdentifier: "LoginModalSegue", sender: self)
-        }
+		showModalIfNotLoggedIn()
         
         setColors()
         
@@ -74,13 +70,29 @@ class BucketListTableViewController: UIViewController {
 		tableView.tableFooterView = UIView()
     }
     
-    private func setColors() {
+	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
+		KeychainWrapper.standard.removeObject(forKey: "access_token")
+		showModalIfNotLoggedIn()
+	}
+
+	func showModalIfNotLoggedIn() {
+		if UserDefaults.isFirstLaunch() && token == nil {
+			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+		} else if token == nil {
+			performSegue(withIdentifier: "LoginModalSegue", sender: self)
+		}
+		print("\(token ?? "")")
+	}
+
+	private func setColors() {
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
         
         tabBarController?.tabBar.tintColor = UIColor.twilightBlue
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
         
         tableView.backgroundColor = .lochmara
         view.backgroundColor = .lochmara
