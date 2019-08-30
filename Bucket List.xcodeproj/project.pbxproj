@@ -16,12 +16,10 @@
 		371D090E23171E980018BEA5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090D23171E980018BEA5 /* Colors.swift */; };
 		371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090F231731170018BEA5 /* Journal+Convenience.swift */; };
 		37243C9623189032007FF76F /* ItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37243C9523189032007FF76F /* ItemWrapper.swift */; };
+		37243C9B2318CCBA007FF76F /* UIColor+Palette(1).swift in Sources */ = {isa = PBXBuildFile; fileRef = 37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */; };
 		3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E6492317797600ADC248 /* BucketListTableViewCell.swift */; };
 		3741E64C2317798D00ADC248 /* BLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64B2317798D00ADC248 /* BLDetailViewController.swift */; };
 		3741E64E231779B600ADC248 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64D231779B500ADC248 /* LoginViewController.swift */; };
-		3741E650231779C000ADC248 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64F231779C000ADC248 /* NewItemViewController.swift */; };
-		3741E652231779D200ADC248 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E651231779D200ADC248 /* SelectDateViewController.swift */; };
-		3741E65423177E0A00ADC248 /* FriendsListTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3741E65323177E0A00ADC248 /* FriendsListTab.storyboard */; };
 		37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA8F231496C200B8D611 /* UserRepresentation.swift */; };
 		37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */; };
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
@@ -59,12 +57,10 @@
 		371D090F231731170018BEA5 /* Journal+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Convenience.swift"; sourceTree = "<group>"; };
 		37243C9523189032007FF76F /* ItemWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemWrapper.swift; sourceTree = "<group>"; };
 		37243C9723189323007FF76F /* BucketList 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 4.xcdatamodel"; sourceTree = "<group>"; };
+		37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette(1).swift"; sourceTree = "<group>"; };
 		3741E6492317797600ADC248 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 		3741E64B2317798D00ADC248 /* BLDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLDetailViewController.swift; sourceTree = "<group>"; };
 		3741E64D231779B500ADC248 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3741E64F231779C000ADC248 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
-		3741E651231779D200ADC248 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
-		3741E65323177E0A00ADC248 /* FriendsListTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsListTab.storyboard; sourceTree = "<group>"; };
 		37ABDA8F231496C200B8D611 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
@@ -150,7 +146,6 @@
 				E525A2852314881400D0CBAE /* LogInScreen.storyboard */,
 				E5E9B8A72315E4680020FBD1 /* FriendsListTab.storyboard */,
 				0E95DE8F2315C437006C58BA /* CompletedBucketList.storyboard */,
-				3741E65323177E0A00ADC248 /* FriendsListTab.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -161,11 +156,9 @@
 				0E8E00B923170CF100BD808C /* BucketListTableViewController.swift */,
 				3741E64B2317798D00ADC248 /* BLDetailViewController.swift */,
 				E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */,
-				3741E651231779D200ADC248 /* SelectDateViewController.swift */,
 				E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */,
 				0E8E00B723170A0700BD808C /* CompletedListViewController.swift */,
 				0E8E00BD2317545700BD808C /* CompletedDetailViewController.swift */,
-				3741E64F231779C000ADC248 /* NewItemViewController.swift */,
 				3741E64D231779B500ADC248 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
@@ -197,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				371D090D23171E980018BEA5 /* Colors.swift */,
+				37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -287,7 +281,6 @@
 			files = (
 				E5E9B8A82315E4680020FBD1 /* FriendsListTab.storyboard in Resources */,
 				37D059A9231437D6000434A8 /* LaunchScreen.storyboard in Resources */,
-				3741E65423177E0A00ADC248 /* FriendsListTab.storyboard in Resources */,
 				37D059A6231437D6000434A8 /* Assets.xcassets in Resources */,
 				0E95DE902315C437006C58BA /* CompletedBucketList.storyboard in Resources */,
 				E525A2862314881400D0CBAE /* LogInScreen.storyboard in Resources */,
@@ -302,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3741E652231779D200ADC248 /* SelectDateViewController.swift in Sources */,
 				37CCA8AD231601BE00867A5D /* UserDefaultsHelper.swift in Sources */,
 				3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */,
 				371D090E23171E980018BEA5 /* Colors.swift in Sources */,
@@ -311,6 +303,7 @@
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
 				0E8E00BE2317545700BD808C /* CompletedDetailViewController.swift in Sources */,
 				E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */,
+				37243C9B2318CCBA007FF76F /* UIColor+Palette(1).swift in Sources */,
 				E5EA9BAA2318448E00AC2085 /* FriendsTabTableViewCell.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
@@ -329,7 +322,6 @@
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
 				37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */,
 				37243C9623189032007FF76F /* ItemWrapper.swift in Sources */,
-				3741E650231779C000ADC248 /* NewItemViewController.swift in Sources */,
 				371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */,
 				0E8E00B823170A0700BD808C /* CompletedListViewController.swift in Sources */,
 			);

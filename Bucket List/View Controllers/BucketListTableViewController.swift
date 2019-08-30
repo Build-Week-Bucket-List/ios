@@ -21,22 +21,7 @@ class BucketListTableViewController: UIViewController {
 
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
-		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-
-		let titleDescriptor = NSSortDescriptor(key: "itemtitle", ascending: true)
-		let completedDescriptor = NSSortDescriptor(key: "completed", ascending: true)
-		fetchRequest.sortDescriptors = [completedDescriptor, titleDescriptor]
-
-		let moc = CoreDataStack.shared.mainContext
-		let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-
-		frc.delegate = self
-		do {
-			try frc.performFetch()
-		} catch {
-			fatalError("Error performing fetch for frc: \(error)")
-		}
-		return frc
+		return generateFetchedResultsController()
 	}()
 
 
@@ -62,11 +47,27 @@ class BucketListTableViewController: UIViewController {
 		if token != nil {
 			itemController.fetchAllItems()
 		}
+		tableView.refreshControl = UIRefreshControl()
+		tableView.refreshControl?.addTarget(self, action: #selector(beginRefresh), for: .valueChanged)
+		tableView.refreshControl?.tintColor = .white
 //		 TODO: Figure out if token is being accessed correctly
+	}
+
+	@objc
+	func beginRefresh() {
+		itemController.fetchAllItems { (_) in
+			DispatchQueue.main.async {
+				self.tableView.refreshControl?.endRefreshing()
+			}
+		}
 	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
 		KeychainWrapper.standard.removeObject(forKey: .accessTokenKey)
+		CoreDataStack.shared.removeAllObjects()
+//		CoreDataStack.shared.mainContext.reset()
+//		resetFetchedResultsController()
+		try? CoreDataStack.shared.save()
 		print(token ?? "No Token")
 		showModalIfNotLoggedIn()
 	}
@@ -78,12 +79,34 @@ class BucketListTableViewController: UIViewController {
 		print("\(token ?? "")")
 	}
 
+	private func generateFetchedResultsController() -> NSFetchedResultsController<Item> {
+		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+
+		let titleDescriptor = NSSortDescriptor(key: "itemtitle", ascending: true)
+		let completedDescriptor = NSSortDescriptor(key: "completed", ascending: true)
+		fetchRequest.sortDescriptors = [completedDescriptor, titleDescriptor]
+
+		let moc = CoreDataStack.shared.mainContext
+		let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+
+		frc.delegate = self
+		do {
+			try frc.performFetch()
+		} catch {
+			fatalError("Error performing fetch for frc: \(error)")
+		}
+		return frc
+	}
+
+	private func resetFetchedResultsController() {
+		fetchedResultsController = generateFetchedResultsController()
+	}
+
 	private func setColors() {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
-            style: .plain, target: self, action: nil)
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector("addNewItem"))
-        navigationItem.rightBarButtonItems = [icon, add]
+            style: .plain, target: self, action: #selector(addNewItem))
+        navigationItem.rightBarButtonItem = icon
         
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
@@ -110,6 +133,7 @@ class BucketListTableViewController: UIViewController {
         if segue.identifier == "BLDetailViewShowSegue" {
 			if let detailVC = segue.destination as? BucketListDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow {
+				detailVC.itemController = itemController
 				detailVC.item = fetchedResultsController.object(at: indexPath)
             }
         } else if segue.identifier == "AddNewItemShowSegue" {

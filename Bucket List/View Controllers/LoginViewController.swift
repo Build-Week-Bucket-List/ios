@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var signupButton: UIButton!
 
+	let layer = CAGradientLayer()
+	let buttonLayer = CAGradientLayer()
 	let userController = UserController.shared
 	var isLogin: Bool = false
     
@@ -23,9 +25,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signupButton.layer.cornerRadius = signupButton.frame.height / 2
-    self.view.backgroundColor = UIColor.twilightBlue
-        self.signupButton.backgroundColor = UIColor.eveningSea
-        self.segControl.backgroundColor = UIColor.twilightBlue
+		signupButton.backgroundColor = UIColor.eveningSea
+//        segControl.backgroundColor = UIColor.twilightBlue
+		setUI()
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
@@ -125,18 +127,20 @@ class LoginViewController: UIViewController {
 		return checker
 	}
 
+	private func setUI() {
+		segControl.tintColor = UIColor(red: 0.35, green: 0.20, blue: 0.90, alpha: 1.00)
+		signupButton.clipsToBounds = true
+		buttonLayer.startPoint = CGPoint(x: 0, y: 0.5)
+		buttonLayer.endPoint = CGPoint(x: 1, y: 0.5)
+		buttonLayer.frame = CGRect(x: 0, y: 0, width: signupButton.bounds.width, height: signupButton.bounds.height)
+		buttonLayer.colors = [UIColor(red: 0.50, green: 0.37, blue: 1.00, alpha: 1.00).cgColor,
+						UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1.00).cgColor]
+		signupButton.layer.addSublayer(buttonLayer)
+		layer.frame = view.bounds
+		layer.colors = [UIColor(red: 0.69, green: 0.96, blue: 0.40, alpha: 1.00).cgColor,
+						UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1.00).cgColor]
+		view.layer.insertSublayer(layer, at: 0)
+	}
+
 }
-
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 

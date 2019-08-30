@@ -37,6 +37,10 @@ class BucketListTableViewCell: UITableViewCell {
         
     }
 
+	override func prepareForReuse() {
+		item = nil
+	}
+
 	private func setUI() {
         self.accessoryType = .disclosureIndicator
         
