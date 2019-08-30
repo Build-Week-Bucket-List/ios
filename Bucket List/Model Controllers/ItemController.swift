@@ -205,7 +205,7 @@ class ItemController {
 
 	private func fetchSingleItemFromPersistentStore(itemID: Int64, context: NSManagedObjectContext) -> Item? {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-		fetchRequest.predicate = NSPredicate(format: "identifier == %@", itemID)
+		fetchRequest.predicate = NSPredicate(format: "itemid == %ld", itemID)
 
 		var item: Item?
 
