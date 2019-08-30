@@ -9,15 +9,15 @@
 import UIKit
 
 class SearchDetailTableViewController: UITableViewController {
+    
 
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-    }
     @IBOutlet weak var searchFriendsBar: UISearchBar!
-    
-    
-    override func viewDidLoad() {
+   
+
+        override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lochmara
+    navigationController?.navigationBar.tintColor = .white
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
