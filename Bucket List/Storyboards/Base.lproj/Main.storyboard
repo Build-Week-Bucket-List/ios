@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-Ur-154">
-                                <rect key="frame" x="20" y="510.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="432" width="374" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveTapped:" destination="Wjc-KB-oRJ" eventType="touchUpInside" id="vie-NK-qsg"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="u0T-VC-dq0">
-                                <rect key="frame" x="20" y="172" width="374" height="288.5"/>
+                                <rect key="frame" x="20" y="172" width="374" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-AU-arO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="61"/>
@@ -68,39 +68,27 @@
                                             </textView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k8R-QX-f70">
-                                        <rect key="frame" x="0.0" y="230" width="374" height="58.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-za-9pl">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wU-Q7-Nww">
-                                                <rect key="frame" x="0.0" y="28.5" width="374" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="uaW-Iw-PCV"/>
-                                                </constraints>
-                                                <state key="normal" title="Select Date"/>
-                                                <connections>
-                                                    <segue destination="Hqt-1P-Rd4" kind="presentation" identifier="SetItemDateModalSegue" id="sPp-A1-Re9"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGn-a8-Tha">
+                                <rect key="frame" x="361" y="145" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="JGn-a8-Tha" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="5" id="0Pt-KD-VRN"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="9wk-OG-loX"/>
+                            <constraint firstItem="JGn-a8-Tha" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VaW-la-oZA" secondAttribute="leading" constant="361" id="Be2-EE-dPt"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="eqt-Ur-154" secondAttribute="trailing" constant="20" id="Q36-lr-KRz"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="top" secondItem="u0T-VC-dq0" secondAttribute="bottom" constant="50" id="aaA-5t-s2g"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="qRH-89-fuF"/>
+                            <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="JGn-a8-Tha" secondAttribute="trailing" constant="20" id="rau-YD-BKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
                         <connections>
@@ -114,8 +102,7 @@
                         <outlet property="itemNameTextField" destination="Gvq-bq-r27" id="SRI-Xu-xBN"/>
                         <outlet property="nameLabel" destination="3PK-VA-Cat" id="O6m-3s-BCg"/>
                         <outlet property="saveButton" destination="eqt-Ur-154" id="UqP-px-J1Q"/>
-                        <outlet property="selectDateButton" destination="4wU-Q7-Nww" id="apl-4C-waZ"/>
-                        <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="Nmz-25-3Ey"/>
+                        <outlet property="smallDateLabel" destination="JGn-a8-Tha" id="hTd-EL-lY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljM-tS-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,74 +113,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2911.594202898551" y="225"/>
-        </scene>
-        <!--Select Date-->
-        <scene sceneID="w2k-9r-hYW">
-            <objects>
-                <viewController id="Hqt-1P-Rd4" customClass="SelectDateViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Eww-gh-x2s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="qah-ER-jAr">
-                                <rect key="frame" x="0.0" y="94" width="414" height="302"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-Ae-pOx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-FV-gE1">
-                                        <rect key="frame" x="0.0" y="86" width="414" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="588624695.00217497">
-                                            <!--2019-08-27 18:51:35 +0000-->
-                                        </date>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lN7-Ir-zUP">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="rwl-OW-Sir">
-                                        <connections>
-                                            <action selector="cancelTapped:" destination="Hqt-1P-Rd4" id="B3E-TE-GRT"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fu3-W4-mAN"/>
-                                    <barButtonItem systemItem="save" id="V5K-AC-RCQ">
-                                        <connections>
-                                            <action selector="saveTapped:" destination="Hqt-1P-Rd4" id="3Ue-6Z-2eh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qah-ER-jAr" firstAttribute="leading" secondItem="Eww-gh-x2s" secondAttribute="leading" id="JC5-8S-fv1"/>
-                            <constraint firstItem="lN7-Ir-zUP" firstAttribute="trailing" secondItem="x0k-W2-RMM" secondAttribute="trailing" id="K2N-34-PDp"/>
-                            <constraint firstItem="lN7-Ir-zUP" firstAttribute="leading" secondItem="x0k-W2-RMM" secondAttribute="leading" id="LJa-50-IwC"/>
-                            <constraint firstItem="x0k-W2-RMM" firstAttribute="trailing" secondItem="qah-ER-jAr" secondAttribute="trailing" id="rEA-wB-5Tl"/>
-                            <constraint firstItem="qah-ER-jAr" firstAttribute="top" secondItem="x0k-W2-RMM" secondAttribute="top" constant="50" id="sMi-H1-YD5"/>
-                            <constraint firstAttribute="bottom" secondItem="lN7-Ir-zUP" secondAttribute="bottom" id="yC1-kg-m8s"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="x0k-W2-RMM"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Date" id="sfU-jy-xuk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="BiQ-sd-fjp"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="rwl-OW-Sir" id="NkM-6Y-Ljj"/>
-                        <outlet property="datePicker" destination="ziJ-FV-gE1" id="Zbs-d7-BcP"/>
-                        <outlet property="saveButton" destination="V5K-AC-RCQ" id="P7H-ey-0J5"/>
-                        <outlet property="titleLabel" destination="DYD-Ae-pOx" id="CBJ-tD-2Hg"/>
-                        <outlet property="toolBar" destination="lN7-Ir-zUP" id="i4o-JG-gon"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ri1-TZ-3px" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3872" y="-461"/>
         </scene>
         <!--Bucket List-->
         <scene sceneID="eW0-4L-iQb">

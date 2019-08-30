@@ -27,12 +27,6 @@ class FriendsListTabTableViewController: UITableViewController {
     }
     
     private func setUI() {
-        let icon = UIBarButtonItem(
-            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
-            style: .plain, target: self, action: nil)
-        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector("search"))
-        navigationItem.rightBarButtonItems = [icon, search]
-        
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
         
@@ -43,21 +37,13 @@ class FriendsListTabTableViewController: UITableViewController {
         self.view.backgroundColor = UIColor.lochmara
         self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
     }
-    
-    @objc private func search() {
-        performSegue(withIdentifier: "searchFriendsShowSegue", sender: self)
-    }
 
     // MARK: - Table view data source
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 10
     }
 

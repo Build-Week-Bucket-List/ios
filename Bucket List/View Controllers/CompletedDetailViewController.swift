@@ -8,21 +8,16 @@
 
 import UIKit
 
-class CompletedDetailViewController: UIViewController, DatePickerDelegate {
-    
-    var date: Date?
+class CompletedDetailViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
-    @IBOutlet weak var selectedDateLabel: UILabel!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var reselectDateButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var smallDateLabel: UILabel!
     
-    var item: ItemController? /* { // TODO - Change type to single item
+    var item: Item? /* { // TODO - Change type to single item
      didSet {
      updateViews
      }
@@ -44,15 +39,10 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         navigationItem.rightBarButtonItem = icon
         
         tabBarController?.tabBar.tintColor = UIColor.twilightBlue
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
-        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
-
-        
-        reselectDateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
-        reselectDateButton.backgroundColor = UIColor.eveningSea
-        reselectDateButton.layer.cornerRadius = reselectDateButton.frame.height / 2
+        navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
         
         updateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
         updateButton.backgroundColor = UIColor.eveningSea
@@ -65,7 +55,6 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
         
         nameLabel.textColor = .twilightBlue
         descriptionLabel.textColor = .twilightBlue
-        selectedDateLabel.textColor = .twilightBlue
     }
     
     private func setTextViewBorder(textView: UITextView) {
@@ -76,10 +65,10 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
     }
     
     private func updateViews() {
-        // Uncomment when implemented - TODO
-        //        guard let item = item, let date = date else { return }
-        //        itemDescriptionLabel.text = item.description
-        //        dateLabel.text = dateFormatter.string(for: date)
+        guard let item = item else { return }
+        descTextView.text = item.description
+        nameTextField.text = item.itemtitle
+        smallDateLabel.text = "Date created: \(dateFormatter.string(from: item.created ?? Date()))"
     }
     
     var dateFormatter: DateFormatter = {
@@ -107,30 +96,18 @@ class CompletedDetailViewController: UIViewController, DatePickerDelegate {
     
 
     private func updateItem() -> Bool {
-        if let _ = nameTextField.text, let _ = descTextView,
-            let _ = date {
+        if let _ = nameTextField.text, let _ = descTextView {
             //            item.title = title
             //            item.description = description
-            //            item.date = date
             return true
         }
         return false
     }
-
-    func itemDateWasChosen(selectedDate: Date) {
-        date = selectedDate
-        selectedDateLabel.text = dateFormatter.string(for: selectedDate)
-        date = selectedDate
-    }
     
     // MARK: - Navigation
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ReselectDateModalSegue" {
-            if let datePickerVC = segue.destination as? SelectDateViewController {
-                datePickerVC.delegate = self
-            }
-        }
     }
+    */
     
 }

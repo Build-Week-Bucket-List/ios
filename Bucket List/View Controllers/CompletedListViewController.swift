@@ -26,18 +26,22 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     private func setColors() {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
-            style: .plain, target: self, action: nil)
+            style: .plain, target: self, action: #selector(addNewItem))
         navigationItem.rightBarButtonItem = icon
         
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
         
         tabBarController?.tabBar.tintColor = UIColor.twilightBlue
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
         completedTableView.backgroundColor = .lochmara
         view.backgroundColor = .lochmara
+    }
+    
+    @objc private func addNewItem() {
+        performSegue(withIdentifier: "NewCompletedShowSegue", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,14 +55,15 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "NewCompletedShowSegue" {
+            guard let newCompletedDetailVC = segue.destination as? CompletedDetailViewController else { return }
+            newCompletedDetailVC.title = "Add Completed Item"
+            // newCompletedDetailVC.item = ItemController.
+        }
      }
-     */
     
 }
