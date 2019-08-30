@@ -15,7 +15,9 @@ class BucketListTableViewController: UIViewController {
 
 	let itemController = ItemController()
 	let userController = UserController()
-    let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
+	var token: String? {
+		return KeychainWrapper.standard.string(forKey: .accessTokenKey)
+	}
 
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
@@ -40,6 +42,7 @@ class BucketListTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(KeychainWrapper.standard.string(forKey: "access_token") ?? "token?")
         print("\(token ?? "")")
 		print(userController.user?.username ?? "No username?")
         setColors()
@@ -55,25 +58,33 @@ class BucketListTableViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-//		showModalIfNotLoggedIn()
+		showModalIfNotLoggedIn()
+		if token != nil {
+			itemController.fetchAllItems()
+		}
+//		 TODO: Figure out if token is being accessed correctly
 	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
-		KeychainWrapper.standard.removeObject(forKey: "access_token")
+		KeychainWrapper.standard.removeObject(forKey: .accessTokenKey)
 		print(token ?? "No Token")
 		showModalIfNotLoggedIn()
 	}
 
 	func showModalIfNotLoggedIn() {
-		if UserDefaults.isFirstLaunch() && token == nil {
-			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
-		} else if token == nil {
+		if token == nil {
 			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		}
 		print("\(token ?? "")")
 	}
 
 	private func setColors() {
+        let icon = UIBarButtonItem(
+            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: nil)
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector("addNewItem"))
+        navigationItem.rightBarButtonItems = [icon, add]
+        
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
         
@@ -85,6 +96,10 @@ class BucketListTableViewController: UIViewController {
         
         tableView.backgroundColor = .lochmara
         view.backgroundColor = .lochmara
+    }
+    
+    @objc private func addNewItem() {
+        performSegue(withIdentifier: "AddNewItemShowSegue", sender: self)
     }
     
     
@@ -119,6 +134,13 @@ extension BucketListTableViewController: UITableViewDelegate, UITableViewDataSou
         
         return cell
     }
+
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			let item = fetchedResultsController.object(at: indexPath)
+			itemController.deleteItem(item: item)
+		}
+	}
 }
 
 extension BucketListTableViewController: NSFetchedResultsControllerDelegate {
@@ -164,3 +186,6 @@ extension BucketListTableViewController: NSFetchedResultsControllerDelegate {
 	}
 }
 
+extension String {
+	static let accessTokenKey = "access_token"
+}

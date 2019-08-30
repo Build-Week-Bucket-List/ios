@@ -48,7 +48,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="6K9-qL-WTW">
                             <connections>
                                 <action selector="searchButtonTApped:" destination="aJg-qy-GN1" id="RkD-nv-cW3"/>
-                                <segue destination="zcI-aH-PLc" kind="show" id="eHD-By-OpH"/>
+                                <segue destination="zcI-aH-PLc" kind="show" identifier="searchFriendsShowSegue" id="eHD-By-OpH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

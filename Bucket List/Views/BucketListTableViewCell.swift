@@ -43,8 +43,10 @@ class BucketListTableViewCell: UITableViewCell {
         bucketListItemName.textColor = .twilightBlue
         bucketListItemDescription.textColor = .twilightBlue
         backgroundColor = .lochmara
-        doneButton.setTitleColor(UIColor.twilightBlue, for: .normal)
-        doneButton.backgroundColor = UIColor.eveningSea
+        doneButton.setTitleColor(UIColor(red: 0.70, green: 0.90, blue: 1.00, alpha: 1.00), for: .normal)
+        doneButton.layer.borderWidth = 1.5
+        doneButton.layer.cornerRadius = 6
+        doneButton.layer.borderColor = UIColor(red: 0.70, green: 0.90, blue: 1.00, alpha: 1.00).cgColor
 	}
 
 }

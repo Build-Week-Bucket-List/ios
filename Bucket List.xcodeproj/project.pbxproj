@@ -15,6 +15,7 @@
 		370D11EE2316FC3B00D5711A /* JournalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */; };
 		371D090E23171E980018BEA5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090D23171E980018BEA5 /* Colors.swift */; };
 		371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090F231731170018BEA5 /* Journal+Convenience.swift */; };
+		37243C9623189032007FF76F /* ItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37243C9523189032007FF76F /* ItemWrapper.swift */; };
 		3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E6492317797600ADC248 /* BucketListTableViewCell.swift */; };
 		3741E64C2317798D00ADC248 /* BLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64B2317798D00ADC248 /* BLDetailViewController.swift */; };
 		3741E64E231779B600ADC248 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64D231779B500ADC248 /* LoginViewController.swift */; };
@@ -56,6 +57,8 @@
 		370D11ED2316FC3B00D5711A /* JournalRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRepresentation.swift; sourceTree = "<group>"; };
 		371D090D23171E980018BEA5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		371D090F231731170018BEA5 /* Journal+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Convenience.swift"; sourceTree = "<group>"; };
+		37243C9523189032007FF76F /* ItemWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemWrapper.swift; sourceTree = "<group>"; };
+		37243C9723189323007FF76F /* BucketList 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 4.xcdatamodel"; sourceTree = "<group>"; };
 		3741E6492317797600ADC248 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 		3741E64B2317798D00ADC248 /* BLDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLDetailViewController.swift; sourceTree = "<group>"; };
 		3741E64D231779B500ADC248 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 				371D090F231731170018BEA5 /* Journal+Convenience.swift */,
 				37ABDA93231496EF00B8D611 /* User+Convenience.swift */,
 				37ABDA952314970000B8D611 /* Item+Convenience.swift */,
+				37243C9523189032007FF76F /* ItemWrapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 				37ABDA982314ED8E00B8D611 /* Bearer.swift in Sources */,
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
 				37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */,
+				37243C9623189032007FF76F /* ItemWrapper.swift in Sources */,
 				3741E650231779C000ADC248 /* NewItemViewController.swift in Sources */,
 				371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */,
 				0E8E00B823170A0700BD808C /* CompletedListViewController.swift in Sources */,
@@ -531,11 +536,12 @@
 		37D059C323146312000434A8 /* BucketList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				37243C9723189323007FF76F /* BucketList 4.xcdatamodel */,
 				370D11EC2316F90B00D5711A /* BucketList 3.xcdatamodel */,
 				370D11EB2316D7EF00D5711A /* BucketList 2.xcdatamodel */,
 				37D059C423146312000434A8 /* BucketList.xcdatamodel */,
 			);
-			currentVersion = 370D11EC2316F90B00D5711A /* BucketList 3.xcdatamodel */;
+			currentVersion = 37243C9723189323007FF76F /* BucketList 4.xcdatamodel */;
 			path = BucketList.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

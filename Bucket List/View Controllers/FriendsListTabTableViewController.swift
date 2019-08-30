@@ -15,10 +15,8 @@ class FriendsListTabTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.lochmara
-        navigationController?.navigationBar.barTintColor = UIColor.eveningSea
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.twilightBlue]
         
+        setUI()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -26,6 +24,28 @@ class FriendsListTabTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    private func setUI() {
+        let icon = UIBarButtonItem(
+            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: nil)
+        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector("search"))
+        navigationItem.rightBarButtonItems = [icon, search]
+        
+        navigationController?.navigationBar.barTintColor = UIColor.eveningSea
+        tabBarController?.tabBar.barTintColor = UIColor.eveningSea
+        
+        tabBarController?.tabBar.tintColor = UIColor.twilightBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+        
+        self.view.backgroundColor = UIColor.lochmara
+        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
+    }
+    
+    @objc private func search() {
+        performSegue(withIdentifier: "searchFriendsShowSegue", sender: self)
     }
 
     // MARK: - Table view data source

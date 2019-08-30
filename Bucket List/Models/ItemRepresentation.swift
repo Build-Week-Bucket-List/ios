@@ -15,7 +15,7 @@ struct ItemRepresentation: Codable {
 	let date: Date?
 	let identifier: Int?
 	let isCompleted: Bool?
-	let journal: JournalRepresentation?
+	let journal: [JournalRepresentation]?
 
 	enum CodingKeys: String, CodingKey {
 		case itemTitle = "itemtitle"

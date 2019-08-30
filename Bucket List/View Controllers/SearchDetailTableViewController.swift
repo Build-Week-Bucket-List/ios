@@ -17,7 +17,11 @@ class SearchDetailTableViewController: UITableViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lochmara
-    navigationController?.navigationBar.tintColor = .white
+        
+        let icon = UIBarButtonItem(
+            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = icon
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
