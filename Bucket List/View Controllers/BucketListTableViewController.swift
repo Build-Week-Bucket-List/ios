@@ -62,7 +62,19 @@ class BucketListTableViewController: UIViewController {
 		if token != nil {
 			itemController.fetchAllItems()
 		}
+		tableView.refreshControl = UIRefreshControl()
+		tableView.refreshControl?.addTarget(self, action: #selector(beginRefresh), for: .valueChanged)
+		tableView.refreshControl?.tintColor = .white
 //		 TODO: Figure out if token is being accessed correctly
+	}
+
+	@objc
+	func beginRefresh() {
+		itemController.fetchAllItems { (_) in
+			DispatchQueue.main.async {
+				self.tableView.refreshControl?.endRefreshing()
+			}
+		}
 	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {

@@ -107,7 +107,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="searchedFriendCell" destination="7Ac-dc-eC6" id="AdY-s2-beL"/>
+                                    <outlet property="usernameLabel" destination="7Ac-dc-eC6" id="AdY-s2-beL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

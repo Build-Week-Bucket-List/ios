@@ -107,6 +107,7 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	@IBAction func tapToDismissKeyboard(_ sender: UITapGestureRecognizer) {
 		itemNameTextField.resignFirstResponder()
 		itemDescriptionTextView.resignFirstResponder()
+
 	}
 
 
