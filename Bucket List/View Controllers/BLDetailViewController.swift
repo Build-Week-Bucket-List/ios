@@ -89,7 +89,11 @@ class BucketListDetailViewController: UIViewController, UITextFieldDelegate, UIT
 			let description = itemDescriptionTextView.text,
 			!description.isEmpty else { return }
 
-		itemController.createItem(title: title, description: description)
+		if item == nil {
+			itemController.createItem(title: title, description: description)
+		} else if let item = item {
+			itemController.updateItem(item: item, title: title, description: description)
+		}
 		self.navigationController?.popToRootViewController(animated: true)
 	}
 
