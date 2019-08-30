@@ -8,8 +8,27 @@
 
 import UIKit
 
+extension UITextField {
+    
+    func setPadding(){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setBottomBorder(){
+        
+        
+        self.layer.shadowColor = UIColor.eveningSea.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+        
+    }
+}
+
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var welcomeToBucketListLabel: UILabel!
     @IBOutlet var signupView: UIView!
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -26,8 +45,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         signupButton.layer.cornerRadius = signupButton.frame.height / 2
 		signupButton.backgroundColor = UIColor.eveningSea
-//        segControl.backgroundColor = UIColor.twilightBlue
+        
+        welcomeToBucketListLabel.textColor = UIColor.eveningSea
+       
 		setUI()
+        usernameTextfield.setPadding()
+        passwordTextfield.setPadding()
+        usernameTextfield.setBottomBorder()
+        passwordTextfield.setBottomBorder()
     }
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
@@ -128,17 +153,17 @@ class LoginViewController: UIViewController {
 	}
 
 	private func setUI() {
-		segControl.tintColor = UIColor(red: 0.35, green: 0.20, blue: 0.90, alpha: 1.00)
+		segControl.tintColor = UIColor(red: 0.18, green: 0.41, blue: 0.30, alpha: 1.00)
 		signupButton.clipsToBounds = true
 		buttonLayer.startPoint = CGPoint(x: 0, y: 0.5)
 		buttonLayer.endPoint = CGPoint(x: 1, y: 0.5)
 		buttonLayer.frame = CGRect(x: 0, y: 0, width: signupButton.bounds.width, height: signupButton.bounds.height)
-		buttonLayer.colors = [UIColor(red: 0.50, green: 0.37, blue: 1.00, alpha: 1.00).cgColor,
-						UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1.00).cgColor]
+		buttonLayer.colors = [UIColor(red: 0.17, green: 0.45, blue: 0.63, alpha: 1.00).cgColor,
+						UIColor(red: 0.18, green: 0.41, blue: 0.30, alpha: 1.00).cgColor]
 		signupButton.layer.addSublayer(buttonLayer)
 		layer.frame = view.bounds
-		layer.colors = [UIColor(red: 0.69, green: 0.96, blue: 0.40, alpha: 1.00).cgColor,
-						UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1.00).cgColor]
+		layer.colors = [UIColor(red: 0.98, green: 0.97, blue: 0.93, alpha: 1.00).cgColor,
+						UIColor(red: 0.17, green: 0.45, blue: 0.63, alpha: 1.00).cgColor]
 		view.layer.insertSublayer(layer, at: 0)
 	}
 
