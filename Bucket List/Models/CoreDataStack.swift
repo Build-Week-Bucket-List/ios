@@ -47,12 +47,15 @@ class CoreDataStack {
 	func removeAllObjects() {
 		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 		fetchRequest.includesPropertyValues = false
-		do {
-			let items = try mainContext.fetch(fetchRequest)
-			items.forEach { mainContext.delete($0) }
-			try save()
-		} catch {
-			NSLog("Error deleting entities in main context: \(error)")
+		let backgroundContext = container.newBackgroundContext()
+		backgroundContext.perform {
+			do {
+				let items = try backgroundContext.fetch(fetchRequest)
+				items.forEach { backgroundContext.delete($0) }
+				try self.save(context: backgroundContext)
+			} catch {
+				NSLog("Error deleting entities in main context: \(error)")
+			}
 		}
 	}
 }
