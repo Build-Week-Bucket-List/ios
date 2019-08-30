@@ -10,11 +10,11 @@ Pitch: We've all seen the "bucket list family" and some of us potentially grow g
 - Delete your Bucket List Item
 - Mark your Bucket List Item as "Conquered"
 
-* iOS Devs are: *
+### iOS Devs are:
 - Danielle Blackwell - UI & SToryboard Layout
 - Jordan Christensen - UI & Storyboard Layout
 - Marlon Raskin - CoreData & Networking
 
 ### Technologies:
 - CoreData
-- Keychain Wrapper
+- Swift
