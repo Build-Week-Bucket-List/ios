@@ -9,7 +9,8 @@
 import UIKit
 
 class BucketListTableViewCell: UITableViewCell {
-
+	
+	var itemController: ItemController?
 	var item: Item? {
 		didSet {
 			updateViews()
@@ -24,7 +25,6 @@ class BucketListTableViewCell: UITableViewCell {
         super.awakeFromNib()
 		updateViews()
         setUI()
-
     }
 
 	private func updateViews() {
@@ -34,7 +34,13 @@ class BucketListTableViewCell: UITableViewCell {
 	}
     
     @IBAction func doneTapped(_ sender: UIButton) {
-        
+        guard let itemController = itemController,
+			let item = item else { return }
+		let isCompleted = !item.completed
+		if let title = item.itemtitle,
+			let description = item.itemdesc {
+			itemController.updateItem(item: item, title: title, description: description, isCompleted: isCompleted)
+		}
     }
 
 	override func prepareForReuse() {

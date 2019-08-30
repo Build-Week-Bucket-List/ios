@@ -7,10 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class CompletedListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var completedTableView: UITableView!
+
+	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
+		let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+
+//		let titleDescriptor = NSSortDescriptor(key: "itemtitle", ascending: true)
+		let completedDescriptor = NSSortDescriptor(key: "completed", ascending: true)
+		fetchRequest.sortDescriptors = [completedDescriptor]
+
+		let moc = CoreDataStack.shared.mainContext
+		let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+
+		frc.delegate = self
+		do {
+			try frc.performFetch()
+		} catch {
+			fatalError("Error performing fetch for frc: \(error)")
+		}
+		return frc
+	}()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +42,15 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
         
         // Do any additional setup after loading the view.
     }
-    
+
+//	@objc func beginRefresh() {
+//		entryController.fetchEntriesFromServer { (_) in
+//			DispatchQueue.main.async {
+//				self.tableView.refreshControl?.endRefreshing()
+//			}
+//		}
+//	}
+
     private func setColors() {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
@@ -43,13 +71,17 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     @objc private func addNewItem() {
         performSegue(withIdentifier: "NewCompletedShowSegue", sender: self)
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedItemCell", for: indexPath) as? CompletedTableViewCell else { return UITableViewCell() }
+
+		let item = fetchedResultsController.object(at: indexPath)
+		cell.textLabel?.text = item.itemtitle
+		cell.detailTextLabel?.text = item.itemdesc
         
         return cell
     }
@@ -65,5 +97,8 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
             // newCompletedDetailVC.item = ItemController.
         }
      }
-    
+}
+
+extension CompletedListViewController: NSFetchedResultsControllerDelegate {
+
 }

@@ -156,6 +156,7 @@ extension BucketListTableViewController: UITableViewDelegate, UITableViewDataSou
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BucketListCell", for: indexPath) as? BucketListTableViewCell else { return UITableViewCell() }
 
 		let item = fetchedResultsController.object(at: indexPath)
+		cell.itemController = itemController
         cell.item = item
         
         return cell
