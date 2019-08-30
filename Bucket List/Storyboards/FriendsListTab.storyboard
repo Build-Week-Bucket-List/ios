@@ -90,11 +90,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-jV-Qea">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kot-K0-IPO">
                                                     <rect key="frame" x="309.5" y="0.0" width="64.5" height="30"/>
-                                                    <state key="normal" title="Add"/>
+                                                    <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="addButtonTapped:" destination="zcI-aH-PLc" eventType="touchUpInside" id="EdB-4N-pI0"/>
+                                                        <action selector="addButtonTapped:" destination="dfp-VB-XJc" eventType="touchUpInside" id="l6F-oN-ahs"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -108,6 +108,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="usernameLabel" destination="7Ac-dc-eC6" id="AdY-s2-beL"/>
+                                    <outlet property="addButton" destination="kot-K0-IPO" id="lwK-P1-JFt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

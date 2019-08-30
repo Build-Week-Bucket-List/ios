@@ -9,13 +9,12 @@
 import UIKit
 
 class SearchDetailTableViewController: UITableViewController {
+    
 
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-    }
     @IBOutlet weak var searchFriendsBar: UISearchBar!
-    
-    
-    override func viewDidLoad() {
+   
+
+        override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lochmara
         
