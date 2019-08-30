@@ -39,6 +39,7 @@ extension Item {
 	}
 
 	var itemRepresetation: ItemRepresentation {
-		return ItemRepresentation(itemTitle: itemtitle, itemDescription: itemdesc, date: created, identifier: Int(itemid), isCompleted: completed, journal: journal?.journalRepresentation)
+		let journalReps = journal?.compactMap { ($0 as? Journal)?.journalRepresentation }
+		return ItemRepresentation(itemTitle: itemtitle, itemDescription: itemdesc, date: created, identifier: Int(itemid), isCompleted: completed, journal: journalReps)
 	}
 }

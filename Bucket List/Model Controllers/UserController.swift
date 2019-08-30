@@ -142,6 +142,7 @@ class UserController {
 				let result = try jsonDecoder.decode(UserResult.self, from: data)
 				self.token = result.token
 				self.user = user
+				// TODO: Create new Background thread
 				let context = CoreDataStack.shared.mainContext
 
 				context.performAndWait {
@@ -150,7 +151,7 @@ class UserController {
 
 				try CoreDataStack.shared.save()
 				if let token = self.token {
-					KeychainWrapper.standard.set(token, forKey: "access_token")
+					KeychainWrapper.standard.set(token, forKey: .accessTokenKey)
 					completion(.success(token))
 				}
 			} catch {
