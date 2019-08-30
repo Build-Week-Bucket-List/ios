@@ -26,7 +26,8 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	@IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var selectDateButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    
+	@IBOutlet weak var smallDateLabel: UILabel!
+
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -82,11 +83,13 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		itemDescriptionTextView.text = item.itemdesc
 		selectedDateLabel.text = dateFormatter.string(from: item.created ?? Date())
 		itemNameTextField.text = item.itemtitle
+		smallDateLabel.text = "Date created: \(dateFormatter.string(from: item.created ?? Date()))"
 	}
 
 	var dateFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.dateStyle = .medium
+		formatter.dateFormat = "mm/dd"
 		return formatter
 	}()
 
@@ -104,6 +107,7 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	@IBAction func tapToDismissKeyboard(_ sender: UITapGestureRecognizer) {
 		itemNameTextField.resignFirstResponder()
 		itemDescriptionTextView.resignFirstResponder()
+
 	}
 
 
