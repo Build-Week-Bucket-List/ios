@@ -15,7 +15,9 @@ class BucketListTableViewController: UIViewController {
 
 	let itemController = ItemController()
 	let userController = UserController()
-    let token: String? = KeychainWrapper.standard.string(forKey: "access_token")
+	var token: String? {
+		return KeychainWrapper.standard.string(forKey: .accessTokenKey)
+	}
 
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
@@ -56,19 +58,21 @@ class BucketListTableViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-//		showModalIfNotLoggedIn()
+		showModalIfNotLoggedIn()
+		if token != nil {
+			itemController.fetchAllItems()
+		}
+//		 TODO: Figure out if token is being accessed correctly
 	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
-		KeychainWrapper.standard.removeObject(forKey: "access_token")
+		KeychainWrapper.standard.removeObject(forKey: .accessTokenKey)
 		print(token ?? "No Token")
 		showModalIfNotLoggedIn()
 	}
 
 	func showModalIfNotLoggedIn() {
-		if UserDefaults.isFirstLaunch() && token == nil {
-			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
-		} else if token == nil {
+		if token == nil {
 			performSegue(withIdentifier: "showLoginModalSegue", sender: self)
 		}
 		print("\(token ?? "")")
@@ -120,6 +124,13 @@ extension BucketListTableViewController: UITableViewDelegate, UITableViewDataSou
         
         return cell
     }
+
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			let item = fetchedResultsController.object(at: indexPath)
+			itemController.deleteItem(item: item)
+		}
+	}
 }
 
 extension BucketListTableViewController: NSFetchedResultsControllerDelegate {
@@ -165,3 +176,6 @@ extension BucketListTableViewController: NSFetchedResultsControllerDelegate {
 	}
 }
 
+extension String {
+	static let accessTokenKey = "access_token"
+}

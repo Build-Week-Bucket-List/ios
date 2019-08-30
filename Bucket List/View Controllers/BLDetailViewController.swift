@@ -35,6 +35,7 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		setColors()
 		selectedDateLabel.isHidden = true
 		setTextViewBorder(textView: itemDescriptionTextView)
+		updateViews()
 	}
 
 	private func setColors() {
@@ -71,8 +72,9 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	}
 
 	private func updateViews() {
-		guard let item = item else { return }
-		itemDescriptionTextView.text = item.description
+		guard let item = item,
+		isViewLoaded else { return }
+		itemDescriptionTextView.text = item.itemdesc
 		selectedDateLabel.text = dateFormatter.string(from: item.created ?? Date())
 		itemNameTextField.text = item.itemtitle
 	}
