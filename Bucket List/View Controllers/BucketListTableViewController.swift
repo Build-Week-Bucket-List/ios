@@ -42,6 +42,7 @@ class BucketListTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(KeychainWrapper.standard.string(forKey: "access_token") ?? "token?")
         print("\(token ?? "")")
 		print(userController.user?.username ?? "No username?")
         setColors()

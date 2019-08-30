@@ -16,6 +16,11 @@ class SelectDateViewController: UIViewController {
 
 	@IBOutlet weak var datePicker: UIDatePicker!
 	@IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var toolBar: UIToolbar!
+    
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
 	var delegate: DatePickerDelegate?
 
 	override func viewDidLoad() {
@@ -27,6 +32,11 @@ class SelectDateViewController: UIViewController {
 		view.backgroundColor = .twilightBlue
 		titleLabel.textColor = .lochmara
 		datePicker.setValue(UIColor.lochmara, forKeyPath: "textColor")
+        
+        toolBar.barTintColor = UIColor.eveningSea
+        
+        cancelButton.tintColor = .twilightBlue
+        saveButton.tintColor = .twilightBlue
 	}
 
 

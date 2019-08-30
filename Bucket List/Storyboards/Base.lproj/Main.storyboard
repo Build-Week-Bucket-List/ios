@@ -100,7 +100,6 @@
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="top" secondItem="u0T-VC-dq0" secondAttribute="bottom" constant="50" id="aaA-5t-s2g"/>
-                            <constraint firstItem="eqt-Ur-154" firstAttribute="centerX" secondItem="u0T-VC-dq0" secondAttribute="centerX" id="eDQ-di-CvY"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="qRH-89-fuF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
@@ -185,8 +184,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="BiQ-sd-fjp"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="rwl-OW-Sir" id="NkM-6Y-Ljj"/>
                         <outlet property="datePicker" destination="ziJ-FV-gE1" id="Zbs-d7-BcP"/>
+                        <outlet property="saveButton" destination="V5K-AC-RCQ" id="P7H-ey-0J5"/>
                         <outlet property="titleLabel" destination="DYD-Ae-pOx" id="CBJ-tD-2Hg"/>
+                        <outlet property="toolBar" destination="lN7-Ir-zUP" id="i4o-JG-gon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ri1-TZ-3px" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,8 +232,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usL-T1-VUC">
-                                                    <rect key="frame" x="329" y="10" width="37" height="30"/>
-                                                    <state key="normal" title="Done"/>
+                                                    <rect key="frame" x="215" y="12.5" width="151" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
+                                                    <state key="normal" title="Mark as Conquered"/>
                                                     <connections>
                                                         <action selector="doneTapped:" destination="P4F-43-K2L" eventType="touchUpInside" id="axF-xz-2uf"/>
                                                     </connections>
