@@ -39,12 +39,11 @@ class ItemController {
 
 	func updateItem(item: Item, title: String, description: String, isCompleted: Bool = false) {
 		CoreDataStack.shared.mainContext.performAndWait {
-			let itemRep = item.itemRepresetation
-			putUpdate(itemRepresentation: itemRep)
-
 			item.itemtitle = title
 			item.itemdesc = description
 			item.completed = isCompleted
+			let itemRep = item.itemRepresetation
+			putUpdate(itemRepresentation: itemRep)
 
 			do {
 				try CoreDataStack.shared.save()

@@ -103,7 +103,7 @@
                         <constraints>
                             <constraint firstItem="JGn-a8-Tha" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="5" id="0Pt-KD-VRN"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="9wk-OG-loX"/>
-                            <constraint firstItem="JGn-a8-Tha" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VaW-la-oZA" secondAttribute="leading" constant="361" id="Be2-EE-dPt"/>
+                            <constraint firstItem="JGn-a8-Tha" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VaW-la-oZA" secondAttribute="leading" constant="361" id="Be2-EE-dPt"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="eqt-Ur-154" secondAttribute="trailing" constant="20" id="Q36-lr-KRz"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
