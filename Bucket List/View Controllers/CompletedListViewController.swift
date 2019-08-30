@@ -24,6 +24,11 @@ class CompletedListViewController: UIViewController, UITableViewDataSource {
     }
     
     private func setColors() {
+        let icon = UIBarButtonItem(
+            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = icon
+        
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea
         

@@ -40,6 +40,11 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	}
 
 	private func setColors() {
+        let icon = UIBarButtonItem(
+            image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
+            style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = icon
+        
 		tabBarController?.tabBar.tintColor = UIColor.twilightBlue
 		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
