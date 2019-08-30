@@ -105,9 +105,8 @@ class BucketListTableViewController: UIViewController {
 	private func setColors() {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
-            style: .plain, target: self, action: nil)
-		let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
-        navigationItem.rightBarButtonItems = [icon, add]
+            style: .plain, target: self, action: #selector(addNewItem))
+        navigationItem.rightBarButtonItem = icon
         
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
         tabBarController?.tabBar.barTintColor = UIColor.eveningSea

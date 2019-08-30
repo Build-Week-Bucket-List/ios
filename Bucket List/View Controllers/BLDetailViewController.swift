@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITextFieldDelegate, UITextViewDelegate {
+class BucketListDetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
-	var date: Date?
 	var itemController: ItemController?
 	var item: Item? {
 		didSet {
@@ -21,10 +20,8 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 
 	@IBOutlet weak var itemNameTextField: UITextField!
 	@IBOutlet weak var itemDescriptionTextView: UITextView!
-	@IBOutlet weak var selectedDateLabel: UILabel!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var selectDateButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
 	@IBOutlet weak var smallDateLabel: UILabel!
 
@@ -34,7 +31,6 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		itemNameTextField.delegate = self
 		itemDescriptionTextView.delegate = self
 		setColors()
-		selectedDateLabel.isHidden = true
 		setTextViewBorder(textView: itemDescriptionTextView)
 		updateViews()
 	}
@@ -46,18 +42,14 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
         navigationItem.rightBarButtonItem = icon
         
 		tabBarController?.tabBar.tintColor = UIColor.twilightBlue
-		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
-		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
-        
-        selectDateButton.setTitleColor(UIColor.twilightBlue, for: .normal)
-        selectDateButton.backgroundColor = .eveningSea
-        selectDateButton.layer.cornerRadius = selectDateButton.frame.height / 2
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
+		navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.twilightBlue]
         
         saveButton.setTitleColor(UIColor.twilightBlue, for: .normal)
         saveButton.backgroundColor = .eveningSea
         saveButton.layer.cornerRadius = saveButton.frame.height / 2
         
-        self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
+        navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
 
 		view.backgroundColor = .lochmara
 
@@ -69,11 +61,9 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	}
 
 	private func setTextViewBorder(textView: UITextView) {
-		let borderColor = UIColor(displayP3Red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
-
 // 		Set UITextView border to look like a UITextField
 		textView.layer.borderWidth = 0.5
-		textView.layer.borderColor = borderColor.cgColor
+		textView.layer.borderColor = UIColor.borderColor.cgColor
 		textView.layer.cornerRadius = 8
 	}
 
@@ -81,7 +71,6 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 		guard let item = item,
 		isViewLoaded else { return }
 		itemDescriptionTextView.text = item.itemdesc
-		selectedDateLabel.text = dateFormatter.string(from: item.created ?? Date())
 		itemNameTextField.text = item.itemtitle
 		smallDateLabel.text = "Date created: \(dateFormatter.string(from: item.created ?? Date()))"
 	}
@@ -111,26 +100,12 @@ class BucketListDetailViewController: UIViewController, DatePickerDelegate, UITe
 	@IBAction func tapToDismissKeyboard(_ sender: UITapGestureRecognizer) {
 		itemNameTextField.resignFirstResponder()
 		itemDescriptionTextView.resignFirstResponder()
-
 	}
-
-
-	func itemDateWasChosen(selectedDate: Date) {
-		date = selectedDate
-		selectedDateLabel.text = dateFormatter.string(for: selectedDate)
-		selectedDateLabel.isHidden = false
-		date = selectedDate
-	}
-	
 
 	// MARK: - Navigation
-
+    /*
 	// In a storyboard-based application, you will often want to do a little preparation before navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "SetItemDateModalSegue" {
-			if let datePickerVC = segue.destination as? SelectDateViewController {
-				datePickerVC.delegate = self
-			}
-		}
 	}
+    */
 }
