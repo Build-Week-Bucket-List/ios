@@ -16,6 +16,7 @@
 		371D090E23171E980018BEA5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090D23171E980018BEA5 /* Colors.swift */; };
 		371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D090F231731170018BEA5 /* Journal+Convenience.swift */; };
 		37243C9623189032007FF76F /* ItemWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37243C9523189032007FF76F /* ItemWrapper.swift */; };
+		37243C9B2318CCBA007FF76F /* UIColor+Palette(1).swift in Sources */ = {isa = PBXBuildFile; fileRef = 37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */; };
 		3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E6492317797600ADC248 /* BucketListTableViewCell.swift */; };
 		3741E64C2317798D00ADC248 /* BLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64B2317798D00ADC248 /* BLDetailViewController.swift */; };
 		3741E64E231779B600ADC248 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64D231779B500ADC248 /* LoginViewController.swift */; };
@@ -58,6 +59,7 @@
 		371D090F231731170018BEA5 /* Journal+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Convenience.swift"; sourceTree = "<group>"; };
 		37243C9523189032007FF76F /* ItemWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemWrapper.swift; sourceTree = "<group>"; };
 		37243C9723189323007FF76F /* BucketList 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BucketList 4.xcdatamodel"; sourceTree = "<group>"; };
+		37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette(1).swift"; sourceTree = "<group>"; };
 		3741E6492317797600ADC248 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 		3741E64B2317798D00ADC248 /* BLDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLDetailViewController.swift; sourceTree = "<group>"; };
 		3741E64D231779B500ADC248 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				371D090D23171E980018BEA5 /* Colors.swift */,
+				37243C9A2318CCB9007FF76F /* UIColor+Palette(1).swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				37D0599F231437D5000434A8 /* AppDelegate.swift in Sources */,
 				0E8E00BE2317545700BD808C /* CompletedDetailViewController.swift in Sources */,
 				E5E9B8AE23170E770020FBD1 /* SearchDetailTableViewController.swift in Sources */,
+				37243C9B2318CCBA007FF76F /* UIColor+Palette(1).swift in Sources */,
 				E5EA9BAA2318448E00AC2085 /* FriendsTabTableViewCell.swift in Sources */,
 				37D059C523146312000434A8 /* BucketList.xcdatamodeld in Sources */,
 				37D059C223145FBB000434A8 /* ItemController.swift in Sources */,
