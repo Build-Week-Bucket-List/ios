@@ -21,7 +21,6 @@ class searchFriendsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.lochmara
-        searchedFriendCell.textColor = UIColor.twilightBlue
         
         addButton.backgroundColor = .lochmara
         addButton.setTitle("Add", for: .normal)

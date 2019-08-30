@@ -17,6 +17,8 @@ class SearchDetailTableViewController: UITableViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lochmara
+            tableView.tableFooterView = UIView()
+
         
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
