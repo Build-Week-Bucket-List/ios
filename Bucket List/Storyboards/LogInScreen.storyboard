@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ilx-sy-I5s">
-                                <rect key="frame" x="20" y="165" width="374" height="257"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Ilx-sy-I5s">
+                                <rect key="frame" x="20" y="165" width="374" height="280"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RcX-eG-RbR">
                                         <rect key="frame" x="20" y="0.0" width="334" height="29"/>
@@ -32,34 +32,22 @@
                                             <action selector="segControlAction:" destination="SuP-b7-fHq" eventType="valueChanged" id="M66-EV-X7i"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2v-g9-d5p">
-                                        <rect key="frame" x="20" y="46" width="334" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8u-y8-c8M">
-                                        <rect key="frame" x="20" y="84.5" width="334" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8u-y8-c8M">
+                                        <rect key="frame" x="20" y="88" width="334" height="17"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHp-zd-DUd">
-                                        <rect key="frame" x="20" y="132.5" width="334" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94p-ao-dG4">
-                                        <rect key="frame" x="20" y="171" width="334" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94p-ao-dG4">
+                                        <rect key="frame" x="20" y="165" width="334" height="17"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-pk-UhX">
-                                        <rect key="frame" x="110" y="219" width="154" height="38"/>
+                                        <rect key="frame" x="110" y="242" width="154" height="38"/>
                                         <color key="backgroundColor" red="0.058823529630000003" green="0.180392161" blue="0.24705882370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="50" minY="10" maxX="50" maxY="10"/>
@@ -73,10 +61,6 @@
                                     <constraint firstAttribute="trailing" secondItem="94p-ao-dG4" secondAttribute="trailing" constant="20" id="0jz-XO-d4k"/>
                                     <constraint firstAttribute="trailing" secondItem="RcX-eG-RbR" secondAttribute="trailing" constant="20" id="D1Y-uy-eL1"/>
                                     <constraint firstItem="RcX-eG-RbR" firstAttribute="leading" secondItem="Ilx-sy-I5s" secondAttribute="leading" constant="20" id="FBz-59-5ke"/>
-                                    <constraint firstAttribute="trailing" secondItem="sHp-zd-DUd" secondAttribute="trailing" constant="20" id="Iti-8o-pd4"/>
-                                    <constraint firstItem="sHp-zd-DUd" firstAttribute="leading" secondItem="Ilx-sy-I5s" secondAttribute="leading" constant="20" id="WX9-hb-vLW"/>
-                                    <constraint firstAttribute="trailing" secondItem="z2v-g9-d5p" secondAttribute="trailing" constant="20" id="hIr-EF-ZAU"/>
-                                    <constraint firstItem="z2v-g9-d5p" firstAttribute="leading" secondItem="Ilx-sy-I5s" secondAttribute="leading" constant="20" id="k1X-vU-p8w"/>
                                     <constraint firstItem="94p-ao-dG4" firstAttribute="leading" secondItem="Ilx-sy-I5s" secondAttribute="leading" constant="20" id="kFj-Fa-x30"/>
                                     <constraint firstItem="h8u-y8-c8M" firstAttribute="leading" secondItem="Ilx-sy-I5s" secondAttribute="leading" constant="20" id="tbM-KP-z6q"/>
                                     <constraint firstAttribute="trailing" secondItem="h8u-y8-c8M" secondAttribute="trailing" constant="20" id="ywR-3e-OCH"/>
@@ -109,6 +93,7 @@
                         <outlet property="signupButton" destination="Azs-pk-UhX" id="Swy-Ol-fpW"/>
                         <outlet property="signupView" destination="3fU-o9-e6j" id="F44-hT-9Qq"/>
                         <outlet property="usernameTextfield" destination="h8u-y8-c8M" id="3tn-0N-jxa"/>
+                        <outlet property="welcomeToBucketListLabel" destination="yJY-XL-01w" id="k6l-yJ-NIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI3-aD-EQm" userLabel="First Responder" sceneMemberID="firstResponder"/>

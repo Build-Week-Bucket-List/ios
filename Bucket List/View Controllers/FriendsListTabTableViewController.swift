@@ -13,8 +13,11 @@ class FriendsListTabTableViewController: UITableViewController {
     @IBOutlet weak var searchButton: UIBarButtonItem!
     @IBAction func searchButtonTApped(_ sender: UIBarButtonItem) {
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        
         
         setUI()
         
