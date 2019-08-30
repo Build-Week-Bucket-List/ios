@@ -18,6 +18,7 @@ class FriendsListTabTableViewController: UITableViewController {
         
         setUI()
         
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,7 +30,7 @@ class FriendsListTabTableViewController: UITableViewController {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
             style: .plain, target: self, action: nil)
-        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector("search"))
+		let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTarget))
         navigationItem.rightBarButtonItems = [icon, search]
         
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
@@ -43,20 +44,16 @@ class FriendsListTabTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.twilightBlue;
     }
     
-    @objc private func search() {
+    @objc private func searchTarget() {
         performSegue(withIdentifier: "searchFriendsShowSegue", sender: self)
     }
 
     // MARK: - Table view data source
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 10
     }
 

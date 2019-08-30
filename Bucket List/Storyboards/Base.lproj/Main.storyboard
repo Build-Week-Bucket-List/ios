@@ -91,16 +91,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGn-a8-Tha">
+                                <rect key="frame" x="361" y="145" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="JGn-a8-Tha" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="5" id="0Pt-KD-VRN"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="9wk-OG-loX"/>
+                            <constraint firstItem="JGn-a8-Tha" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VaW-la-oZA" secondAttribute="leading" constant="361" id="Be2-EE-dPt"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="eqt-Ur-154" secondAttribute="trailing" constant="20" id="Q36-lr-KRz"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="top" secondItem="VaW-la-oZA" secondAttribute="top" constant="32" id="TTk-hS-gwS"/>
                             <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="u0T-VC-dq0" secondAttribute="trailing" constant="20" id="a9T-MJ-SJH"/>
                             <constraint firstItem="eqt-Ur-154" firstAttribute="top" secondItem="u0T-VC-dq0" secondAttribute="bottom" constant="50" id="aaA-5t-s2g"/>
                             <constraint firstItem="u0T-VC-dq0" firstAttribute="leading" secondItem="VaW-la-oZA" secondAttribute="leading" constant="20" id="qRH-89-fuF"/>
+                            <constraint firstItem="VaW-la-oZA" firstAttribute="trailing" secondItem="JGn-a8-Tha" secondAttribute="trailing" constant="20" id="rau-YD-BKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VaW-la-oZA"/>
                         <connections>
@@ -116,6 +125,7 @@
                         <outlet property="saveButton" destination="eqt-Ur-154" id="UqP-px-J1Q"/>
                         <outlet property="selectDateButton" destination="4wU-Q7-Nww" id="apl-4C-waZ"/>
                         <outlet property="selectedDateLabel" destination="gtq-za-9pl" id="Nmz-25-3Ey"/>
+                        <outlet property="smallDateLabel" destination="JGn-a8-Tha" id="hTd-EL-lY5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljM-tS-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,6 +376,6 @@
         <image name="list" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u9f-hT-hb6"/>
+        <segue reference="f6A-He-efV"/>
     </inferredMetricsTieBreakers>
 </document>

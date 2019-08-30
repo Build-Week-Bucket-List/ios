@@ -62,7 +62,19 @@ class BucketListTableViewController: UIViewController {
 		if token != nil {
 			itemController.fetchAllItems()
 		}
+		tableView.refreshControl = UIRefreshControl()
+		tableView.refreshControl?.addTarget(self, action: #selector(beginRefresh), for: .valueChanged)
+		tableView.refreshControl?.tintColor = .white
 //		 TODO: Figure out if token is being accessed correctly
+	}
+
+	@objc
+	func beginRefresh() {
+		itemController.fetchAllItems { (_) in
+			DispatchQueue.main.async {
+				self.tableView.refreshControl?.endRefreshing()
+			}
+		}
 	}
     
 	@IBAction func logoutTapped(_ sender: UIBarButtonItem) {
@@ -82,7 +94,7 @@ class BucketListTableViewController: UIViewController {
         let icon = UIBarButtonItem(
             image: UIImage(named: "Icon.png")?.withRenderingMode(.alwaysOriginal),
             style: .plain, target: self, action: nil)
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: Selector("addNewItem"))
+		let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
         navigationItem.rightBarButtonItems = [icon, add]
         
         navigationController?.navigationBar.barTintColor = UIColor.eveningSea
