@@ -50,6 +50,8 @@ class BucketListTableViewController: UIViewController {
 		tableView.refreshControl = UIRefreshControl()
 		tableView.refreshControl?.addTarget(self, action: #selector(beginRefresh), for: .valueChanged)
 		tableView.refreshControl?.tintColor = .white
+        
+        
 //		 TODO: Figure out if token is being accessed correctly
 	}
 
@@ -213,3 +215,4 @@ extension BucketListTableViewController: NSFetchedResultsControllerDelegate {
 extension String {
 	static let accessTokenKey = "access_token"
 }
+
