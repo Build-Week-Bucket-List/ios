@@ -20,8 +20,6 @@
 		3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E6492317797600ADC248 /* BucketListTableViewCell.swift */; };
 		3741E64C2317798D00ADC248 /* BLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64B2317798D00ADC248 /* BLDetailViewController.swift */; };
 		3741E64E231779B600ADC248 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64D231779B500ADC248 /* LoginViewController.swift */; };
-		3741E650231779C000ADC248 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E64F231779C000ADC248 /* NewItemViewController.swift */; };
-		3741E652231779D200ADC248 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741E651231779D200ADC248 /* SelectDateViewController.swift */; };
 		37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA8F231496C200B8D611 /* UserRepresentation.swift */; };
 		37ABDA92231496DB00B8D611 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */; };
 		37ABDA94231496EF00B8D611 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABDA93231496EF00B8D611 /* User+Convenience.swift */; };
@@ -63,8 +61,6 @@
 		3741E6492317797600ADC248 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 		3741E64B2317798D00ADC248 /* BLDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLDetailViewController.swift; sourceTree = "<group>"; };
 		3741E64D231779B500ADC248 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3741E64F231779C000ADC248 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
-		3741E651231779D200ADC248 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 		37ABDA8F231496C200B8D611 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA91231496DB00B8D611 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 		37ABDA93231496EF00B8D611 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
@@ -160,11 +156,9 @@
 				0E8E00B923170CF100BD808C /* BucketListTableViewController.swift */,
 				3741E64B2317798D00ADC248 /* BLDetailViewController.swift */,
 				E5E9B8A9231643250020FBD1 /* FriendsListTabTableViewController.swift */,
-				3741E651231779D200ADC248 /* SelectDateViewController.swift */,
 				E5E9B8AD23170E770020FBD1 /* SearchDetailTableViewController.swift */,
 				0E8E00B723170A0700BD808C /* CompletedListViewController.swift */,
 				0E8E00BD2317545700BD808C /* CompletedDetailViewController.swift */,
-				3741E64F231779C000ADC248 /* NewItemViewController.swift */,
 				3741E64D231779B500ADC248 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
@@ -301,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3741E652231779D200ADC248 /* SelectDateViewController.swift in Sources */,
 				37CCA8AD231601BE00867A5D /* UserDefaultsHelper.swift in Sources */,
 				3741E64A2317797600ADC248 /* BucketListTableViewCell.swift in Sources */,
 				371D090E23171E980018BEA5 /* Colors.swift in Sources */,
@@ -329,7 +322,6 @@
 				37ABDA90231496C200B8D611 /* UserRepresentation.swift in Sources */,
 				37CCA8AB2315D49600867A5D /* KeychainItemAccessibility.swift in Sources */,
 				37243C9623189032007FF76F /* ItemWrapper.swift in Sources */,
-				3741E650231779C000ADC248 /* NewItemViewController.swift in Sources */,
 				371D0910231731170018BEA5 /* Journal+Convenience.swift in Sources */,
 				0E8E00B823170A0700BD808C /* CompletedListViewController.swift in Sources */,
 			);
